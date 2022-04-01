@@ -1,2 +1,2 @@
-dir_to_ignore/uploads
-wp-config.php
+wp-content/uploads
+academiaCES/wp-config.php
