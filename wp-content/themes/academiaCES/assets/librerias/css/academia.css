@@ -1,0 +1,98 @@
+body {
+    font-size: 14px;
+}
+
+
+/*estilos academia tarjetas*/
+
+.bg-fondo-img {
+    height: 133px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 8px;
+}
+
+.tag-tarjeta {
+    display: flex;
+}
+
+.tag-tarjeta li {
+    font-size: 12px;
+    background-color: #fedb09;
+    color: #000;
+    padding: 3px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.autor-curso {
+    font-size: 12px;
+    background-color: #fedb09;
+    color: #000;
+    padding: 3px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+
+/*botones*/
+
+.boton-amarillo {
+    background-color: #fedb09;
+    padding: 3px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: .90rem;
+    font-weight: 700;
+}
+
+
+/*botones*/
+
+
+/*titulos*/
+
+.titulo-academia::after {
+    content: '';
+    display: block;
+    background-color: #fedb09;
+    height: 8px;
+    margin-top: 7px;
+    width: 5%;
+}
+
+
+/*titulos*/
+
+
+/*cards*/
+
+.hover.card {
+    -webkit-box-shadow: 0 0 0px 0px #949494;
+    box-shadow: 0 0 0px 0px #949494;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.hover.card:hover {
+    -webkit-box-shadow: 0 0 15px 1px #949494;
+    box-shadow: 0 0 15px 1px #949494;
+}
+
+
+/*cards*/
+
+
+/*backgrounds de tarjetas*/
+
+
+/*backgrounds de tarjetas*/

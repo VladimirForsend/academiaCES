@@ -1,0 +1,144 @@
+:root {
+    --titan-typo: 'Inter', sans-serif;
+    --titan-title-typo: 'Inter', sans-serif;
+    --color-azul: #3483fa;
+    --color-contraste-blanco: #fff;
+    --color-contraste-negro: #000;
+    --color-carbon: #1e1e1e;
+    --color-cliente: #f00;
+    --color-disponible: #28A745;
+    --color-verde-base: #8fca00;
+    --color-texto: #767676;
+    --color-agotado: #666;
+    --color-secundario-cliente: #1e1e1e;
+    --color-terciario-cliente: #000;
+    --color-gris: #666;
+    --h1: 2.5rem;
+    --h2: 2rem;
+    --h3: 1.5rem;
+    --parrafos: 1rem;
+    --peso-mosca: 100;
+    --peso-mediano: 300;
+    --peso-pesado: 700;
+    --margen-inferior-titulos: 0 0 22px 0px;
+    --transparente: transparent;
+    /* root forsend */
+    /* colores marca respectivos segun su importancia */
+    --color-marca-primero: #ddd;
+    --color-marca-segundo: #111;
+    --color-marca-tercero: #fff;
+    --color-marca-cuarto: #202020;
+    --color-marca-quinto: #EAF5F5;
+    --color-marca-sexto: #DE9900;
+    --color-marca-septimo: #0078BB;
+    --color-generico-blanco: #fff;
+    --color-generico-negro: #000;
+    --color-generico-light: #ccc;
+    --color-generico-dark: #333;
+    /* fuentes tipograficas del sitio */
+    --font-fam-primero-regular: 'Inter';
+    --font-fam-primero-bold: 'proxima_novabold';
+    --font-fam-primero-xbold: 'proxima_novaextrabold';
+    --font-fam-primero-black: 'proxima_novablack';
+    --font-fam-segundo-regular: 'poppinsmedium';
+    /* tamaños tipograficos segun su relevancia */
+    --font-size-titulo-xxl: 3.205rem;
+    /* 51,28px */
+    --font-size-titulo-xl: 2.888rem;
+    /* 46,2px */
+    --font-size-titulo-lg: 2.5rem;
+    /* 40px */
+    --font-size-titulo-md: 2.063rem;
+    /* 33px */
+    --font-size-titulo-sm: 1.777rem;
+    /* 28.4px */
+    --font-size-subtitulo-lg: 1.663rem;
+    /* 26.6px */
+    --font-size-subtitulo-md: 1.438rem;
+    /* 23px */
+    --font-size-subtitulo-sm: 1.25rem;
+    /* 20px */
+    --font-size-parrafo-lg: 1.125rem;
+    /* 18px */
+    --font-size-parrafo-md: 0.813rem;
+    /* 13px */
+    --font-size-parrafo-sm: 0.75rem;
+    /* 12px */
+    /* tamaños background image */
+    --bg-size-cover: cover;
+    --bg-size-100v: 100%;
+    --bg-size-100h: 100%;
+    --bg-size-100: 100%;
+    /* margenes */
+    --margin-top-1: 10px;
+    --margin-top-2: 20px;
+    --margin-top-3: 30px;
+    --margin-top-4: 40px;
+    --margin-top-5: 50px;
+    --margin-top-10: 10%;
+    --margin-top-20: 20%;
+    --margin-top-30: 30%;
+    --margin-bottom-1: 10px;
+    --margin-bottom-2: 20px;
+    --margin-bottom-3: 30px;
+    --margin-bottom-4: 40px;
+    --margin-bottom-5: 50px;
+    --margin-bottom-10: 10%;
+    --margin-bottom-20: 20%;
+    --margin-bottom-30: 30%;
+    --margin-left-1: 10px;
+    --margin-left-2: 20px;
+    --margin-left-3: 30px;
+    --margin-left-4: 40px;
+    --margin-left-5: 50px;
+    --margin-left-10: 10%;
+    --margin-left-20: 20%;
+    --margin-left-30: 30%;
+    --margin-right-1: 10px;
+    --margin-right-2: 20px;
+    --margin-right-3: 30px;
+    --margin-right-4: 40px;
+    --margin-right-5: 50px;
+    --margin-right-10: 10%;
+    --margin-right-20: 20%;
+    --margin-right-30: 30%;
+    /* paddings */
+    --padding-top-1: 10px;
+    --padding-top-2: 20px;
+    --padding-top-3: 30px;
+    --padding-top-4: 40px;
+    --padding-top-5: 50px;
+    --padding-top-10: 10%;
+    --padding-top-20: 20%;
+    --padding-top-30: 30%;
+    --padding-bottom-1: 10px;
+    --padding-bottom-2: 20px;
+    --padding-bottom-3: 30px;
+    --padding-bottom-4: 40px;
+    --padding-bottom-5: 50px;
+    --padding-bottom-10: 10%;
+    --padding-bottom-20: 20%;
+    --padding-bottom-30: 30%;
+    --padding-left-1: 10px;
+    --padding-left-2: 20px;
+    --padding-left-3: 30px;
+    --padding-left-4: 40px;
+    --padding-left-5: 50px;
+    --padding-left-10: 10%;
+    --padding-left-20: 20%;
+    --padding-left-30: 30%;
+    --padding-right-1: 10px;
+    --padding-right-2: 20px;
+    --padding-right-3: 30px;
+    --padding-right-4: 40px;
+    --padding-right-5: 50px;
+    --padding-right-10: 10%;
+    --padding-right-20: 20%;
+    --padding-right-30: 30%;
+    /* bordes redondeados */
+    --border-radius-1: 2px;
+    --border-radius-2: 5px;
+    --border-radius-3: 9px;
+    --border-radius-4: 14px;
+    --border-radius-5: 20px;
+}

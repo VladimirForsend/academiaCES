@@ -1,0 +1,67 @@
+/* ajustes mobile */
+
+@media (min-width: 1px) and (max-width: 1199px) {
+    #BannerFinalHome .textbox{
+        top: -50px;
+    }
+}
+@media (min-width: 1px) and (max-width: 688px) {
+    #carruselSuperior .position-fix{
+        left: 0;
+    }
+}
+@media (max-width: 768px) {
+    body #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-navigation .is-active a:after{
+        content:"\1401";
+    }
+    #masthead .dropdown-menu{
+        display: none !important;
+    }
+    #masthead .nav-link{
+        padding: 0;
+    }
+    #masthead .dropdown-toggle::after{
+        display: none !important;
+    }
+    .ajustar-visibilidad{
+        background-color: rgba(0,0,0,0.6)
+    }
+}
+@media (max-width: 875px){
+    .famosos-text{
+        bottom: 0 !important;
+    }
+}
+@media (min-width: 875px){
+    .page-template-page-carrito .woocommerce .actions .coupon #coupon_code{
+        width: 200px;
+    }
+}
+@media (max-width: 500px){
+    body.page.woocommerce-checkout #customer_details{
+        padding: 1rem;
+    }
+    body.page.woocommerce-checkout #order_review{
+        padding: 1rem;
+    }
+    .woocommerce-account .addresses .title .edit{
+        float: none;
+        display: inline-flex;
+    }
+    #FooterBasico .wp-block-image .alignright{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    body #carruselSuperior .text-container .blurry{
+        left: 20px;
+        right: 20px;
+        top: 20px;
+        bottom: 20px;
+    }
+}
+@media (min-width: 992px){
+    body.page.woocommerce-checkout #order_review{
+        padding-top: 92px;
+    }
+}

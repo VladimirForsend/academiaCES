@@ -1,0 +1,154 @@
+/* clases de las partes interiores del sitio */
+/* pagina mate x */
+#seccionPiezas .row{
+    border-bottom: 5px solid #333;
+    background-color: #fafafa;
+    padding: 20px;
+}
+#seccionPiezas .row:nth-child(even){
+    flex-direction: row-reverse;
+}
+.texto-descripcion{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+.texto-descripcion h3{
+    text-transform: uppercase;
+    font-size: var(--font-size-subtitulo-sm);
+    font-weight: bold;
+}
+.texto-descripcion div{
+    font-size: var(--font-size-parrafo-md);
+    opacity: 0.8;
+}
+.texto-descripcion div ul{
+    list-style: initial;
+    margin-left: 10px;
+}
+/* formularios de contacto general */
+.formulario{
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    min-height: 700px;
+}
+.formulario .wpcf7-not-valid-tip{
+    line-height: 0;
+}
+.formulario .submit{
+    border: none;
+    background-color: black;
+    color:white;
+    text-align: center;
+    width: 100%;
+}
+.wpcf7-response-output{
+    background-color: var(--color-marca-primero);
+}
+/* pagina de contacto */
+#ContactHeader .contact-header-bg{
+    background-color: rgba(33,33,33,0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+#ContactForm{
+    height: 750px;
+}
+#ContactForm #asunto-formulario{
+    height: 100px;
+}
+.wpcf7-not-valid-tip{
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+/* widget banner */
+.banner-type-widget, .banner-type-widget img{
+    width: 100%;
+}
+/* icono de decoración, flecha quebrada */
+.broken-arrow::after{
+    content: "↴";
+    color: inherit;
+    font-size: inherit;
+    font-weight: 900;
+    position: relative;
+    right: -100px;
+}
+/* pagina de error 404 */
+.error-404{
+    background-image: url("http://desarrollo-agencia.cl/emate/wp-content/uploads/2021/08/error-404.jpg");
+    position: absolute;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+}
+.error-404:before{
+    content: "";
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+/* pagina de politicas de privacidad */
+#ContenidoPolicy h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: var(--font-size-subtitulo-md);
+}
+/* remove col */
+.woocommerce .woocommerce-columns--2 .col-1, .woocommerce .woocommerce-columns--2 .col-2{
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+/* pagina mate en el mundo */
+#SeccionColaboraciones, #SeccionFamosos{
+    scroll-margin-top: 100px;
+}
+.posts-mundiales .row:nth-child(odd){
+    flex-direction: row-reverse;
+}
+.posts-mundiales a, .collab-link, .reduce-margin a{
+    text-transform: uppercase;
+    color: var(--color-marca-sexto) !important;
+    font-weight: 900;
+    transition: 0.3s;
+    position: relative;
+    left: 0;
+}
+.posts-mundiales a:hover, .collab-link:hover, .reduce-margin a:hover{
+    left: 5px;
+}
+body.page-template-page-mundial #FooterBasico{
+    margin-top: 0 !important;
+}
+.famosos-text{
+    background-color: rgba(0,0,0,0.85);
+    z-index: 1;
+    position: absolute;
+    bottom: -50%;
+    margin: 0;
+    width: 100%;
+    font-size: var(--font-size-parrafo-md);
+    transition: 0.3s;
+}
+.famosos-card:hover .famosos-text{
+    bottom: 0;
+}
+.famosos-card{
+    align-items: baseline !important;
+}
+/* pagina encuentros*/
+.reduce-margin p{
+    margin-bottom: 3px;
+}

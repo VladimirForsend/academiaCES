@@ -1,0 +1,87 @@
+/*carrito y checkout*/
+
+.woocommerce form .form-row {
+    display: block;
+}
+
+.woocommerce-checkout .col-1,
+.col-2 {
+    max-width: 50%;
+}
+
+#add_payment_method table.cart img,
+.woocommerce-cart table.cart img,
+.woocommerce-checkout table.cart img {
+    width: 100px;
+    box-shadow: none;
+}
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+    max-width: 100%;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    padding: 1rem;
+}
+.cart_totals h2 {
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.wc-proceed-to-checkout{
+    padding-bottom: 0 !important;
+}
+.checkout-button.button.alt.wc-forward {
+    background-color: black;
+    margin-top: 79px;
+    margin-bottom: 0;
+    padding: 10px 0;
+    font-size: var(--font-size-parrafo-lg);
+    bottom: 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.checkout-button.button.alt.wc-forward:hover{
+    background-color: black;
+    bottom:3px;
+    box-shadow: 0 3px 3px #333;
+}
+
+.button:hover {
+    background-color: #88d700;
+    -webkit-transition: box-shadow .1s ease-out;
+    transition: box-shadow .1s ease-out;
+    box-shadow: 0 7px 16px 0 rgba(0, 0, 0, .2), 0 1px 3px 0 rgba(0, 0, 0, .1);
+}
+
+.carro-titan.woocommerce-cart-form, .cart-collaterals {
+    background-color: #fff;
+    padding: 1rem;
+}
+.page-template-page-carrito .woocommerce .woocommerce-cart-form__contents{
+    border-color: #707070;
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+}
+.page-template-page-carrito .woocommerce .banner-carro-2{
+    border-radius: 5px 5px 0 0;
+    border-color: #707070;
+}
+.page-template-page-carrito .woocommerce .woocommerce-cart-form__cart-item .qty{
+    border-bottom: none;
+}
+.page-template-page-carrito .woocommerce .actions .coupon #coupon_code{
+    margin-right: 0;
+    border-radius: 3px 0 0 3px;
+    border-color: #707070;
+}
+.page-template-page-carrito .woocommerce .actions .coupon button{
+    background-color: black;
+    color: white;
+    height: 37px;
+    border-radius: 0 3px 3px 0;
+}

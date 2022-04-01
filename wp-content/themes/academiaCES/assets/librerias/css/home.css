@@ -1,0 +1,177 @@
+/* clases del home */
+#masthead .custom-logo{
+    width: 37px;
+}
+#masthead #primary-menu .menu-item{
+    color: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+#masthead #primary-menu .menu-item:hover{
+    color: white;
+}
+#masthead #primary-menu .dropdown-menu{
+    display: block !important;
+    top: 90%;
+    background-color: #333;
+    color: white;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+#masthead #primary-menu .dropdown-menu .menu-item{
+    text-transform: uppercase;
+    font-size: var(--font-size-parrafo-md);
+    padding: 0px 10px;
+    padding-bottom: 5px;
+}
+#masthead #primary-menu .dropdown-menu .menu-item a{
+    color: white;
+    position: relative;
+    left: 0;
+    transition: 0.3s;
+}
+#masthead #primary-menu .dropdown-menu .menu-item a:hover{
+    left: 5px;
+}
+#BannerFinalHome{
+    height: 517px;
+}
+#BannerFinalHome .pngbox{
+    right: 0;
+    bottom: -30px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 20;
+}
+#BannerFinalHome .textbox{
+    position: relative;
+    top: 100px;
+    z-index: 40;
+}
+/* clases para el boton de wsp */
+.boton-wsp{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.boton-wsp .icono-wsp a{
+    background-color: #25D366;
+    color: white;
+    padding: 6px 35px;
+    border-radius: 35px;
+    align-items: center;
+    justify-content: center;
+}
+.boton-wsp .icono-wsp a p strong{
+    display: block;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1;
+}
+.boton-wsp .modal-hide{
+    height: 0;
+    overflow: hidden;
+    transition: 0.6s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.boton-wsp .modal-wsp{
+    display: block;
+    background-color: #128C7E;
+    margin: 10px 0;
+    padding: 20px 30px;
+    font-size: var(--font-size-parrafo-md);
+    padding-top: 50px;
+}
+.boton-wsp .modal-wsp .background-white{
+    border-radius: 10px;
+    box-shadow: 0px 5px 13px 3px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    padding: 10px;
+    position: relative;
+}
+.boton-wsp .modal-wsp .mateicon-wsp{
+    background-color: black;
+    padding: 7px;
+    border-radius: 100%;
+    border: 5px solid white;
+    position: absolute;
+    top: -30px;
+    left: 38%;
+}
+.boton-wsp .modal-wsp .qr-wsp{
+    height: 155px;
+    width: auto;
+}
+.boton-wsp:hover .modal-hide{
+    height: 425px;
+}
+.reserva-mate{
+    cursor: pointer;
+}
+/* modal reserva tu mate */
+.modal-content{
+    border: 1px solid white;
+}
+.modal-header{
+    border-radius: 0;
+}
+.formulario-reserva label{
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: var(--font-size-parrafo-md);
+}
+.formulario-reserva input, .formulario-reserva select{
+    border: none;
+    border-radius: 0;
+    background-color: #ddd;
+    width: 100%;
+    padding: 4px 10px;
+    font-size: 15px;
+}
+.formulario-reserva #producto-matex-modelo, .formulario-reserva #producto-matex-color{
+    width: 50%;
+}
+.formulario-reserva textarea{
+    border: none;
+    border-radius: 0;
+    padding: 10px;
+    background-color: #ddd;
+    height: 100px;
+}
+.formulario-reserva .submit{
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px;
+    border: 1px solid white;
+    transition: 0.3s;
+}
+.formulario-reserva .submit:hover{
+    background-color: white;
+    color: black;
+    border: 10px solid black;
+}
+#modalreserva .wpcf7-response-output{
+    background-color: black !important;
+    font-size: 15px !important;
+}
+/* clases para el minibanner del nav */
+.banner-nav{
+    text-transform: uppercase;
+    background-color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 6px 10px;
+    font-weight: bold;
+    word-spacing: 3px;
+}
+.banner-nav p{
+    margin-bottom: 0;
+}

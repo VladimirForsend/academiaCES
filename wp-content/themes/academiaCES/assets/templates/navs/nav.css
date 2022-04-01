@@ -1,0 +1,63 @@
+/* clases side cart */
+.xoo-wsc-basket{
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    position: unset;
+}
+.xoo-wsc-basket .xoo-wsc-items-count{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.xoo-wsc-icon-basket1::before {
+    content: "\f290";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding: .5rem;
+    font-size: var(--font-size-subtitulo-sm);
+    line-height: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    text-transform: uppercase;
+    color: var(--color-generico-blanco);
+}
+.xoo-wsc-items-count{
+    top: -5px;
+    left: 25px;
+}
+.xoo-wsc-header{
+    background-color: var(--color-generico-negro);
+    color: var(--color-generico-blanco);
+}
+.xoo-wsc-header span{
+    font-size: var(--font-size-parrafo-lg);
+    font-weight: bold;
+}
+.woocommerce .xoo-wsc-container .xoo-wsc-footer .button{
+    background-color: transparent;
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.xoo-wsc-container .xoo-wsc-footer .button:hover{
+    background-color: var(--color-generico-negro);
+    color: var(--color-generico-blanco);
+}
+.mouse-scroll{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+.mouse-scroll:hover{
+    bottom: 15px;
+}

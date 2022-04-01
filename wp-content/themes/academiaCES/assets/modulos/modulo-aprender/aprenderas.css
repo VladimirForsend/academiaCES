@@ -1,0 +1,9 @@
+.carusel-page-aprenderas .bg-fondo-img {
+    height: 75vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top left;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}

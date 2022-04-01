@@ -1,0 +1,194 @@
+# Translation of Plugins - Export User Data - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Export User Data - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-01-12 04:24:36+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Export User Data - Stable (latest release)\n"
+
+#: library/admin/render.php:183
+msgid "No users found to export in passed query."
+msgstr "No se han encontrado usuarios para exportar en la consulta pasada."
+
+#. Plugin URI of the plugin
+msgid "http://qstudio.us/releases/export-user-data"
+msgstr "https://qstudio.us/releases/export-user-data"
+
+#: library/admin/render.php:413 library/admin/render.php:419
+msgid "Excel 2007 (xlsx)"
+msgstr "Excel 2007 (xlsx)"
+
+#: library/core/config.php:48
+msgid "Select the program that you wish to export."
+msgstr "Selecciona el programa que deseas exportar."
+
+#. Description of the plugin
+msgid "Export User data and metadata."
+msgstr "Exportar datos y metadatos del usuario."
+
+#: library/core/helper.php:26
+msgid " - %s%s() %s:%d"
+msgstr " - %s%s() %s:%d"
+
+#: library/admin/render.php:299
+msgid "Include Standard user profile fields, such as user_login. <a href=\"%s\" target=\"_blank\">%s</a>"
+msgstr "Incluye los campos estándar del perfil de usuario, como `user_login`. <a href=\"%s\" target=\"_blank\">%s</a>"
+
+#: library/admin/render.php:293
+msgid "Standard User Fields"
+msgstr "Campos estándar de usuario "
+
+#. Author URI of the plugin
+msgid "https://qstudio.us"
+msgstr "https://qstudio.us"
+
+#. Author of the plugin
+msgid "Q Studio"
+msgstr "Q Studio"
+
+#: library/admin/render.php:645
+msgid "Hide"
+msgstr "Ocultar"
+
+#: library/admin/render.php:521
+msgid "Run Export"
+msgstr "Ejecutar la exportación"
+
+#: library/admin/render.php:513 library/admin/render.php:647
+msgid "Show"
+msgstr "Mostrar"
+
+#: library/admin/render.php:509
+msgid "Advanced Options"
+msgstr "Opciones avanzadas"
+
+#: library/admin/render.php:502
+msgid "Save, load or delete your stored export options."
+msgstr "Guarda, carga o elimina tus opciones de exportación almacenadas."
+
+#: library/admin/render.php:495
+msgid "Delete"
+msgstr "Borrar"
+
+#: library/admin/render.php:494
+msgid "Load"
+msgstr "Cargar"
+
+#: library/admin/render.php:454
+msgid "Save"
+msgstr "Guardar"
+
+#: library/admin/render.php:453
+msgid "Export Name"
+msgstr "Nombre de la exportación"
+
+#: library/admin/render.php:449
+msgid "Stored Options"
+msgstr "Opciones almacenadas"
+
+#: library/admin/render.php:442
+msgid "Select the format for the export file."
+msgstr "Selecciona el formato para el archivo de exportación."
+
+#: library/admin/render.php:427 library/admin/render.php:433
+msgid "CSV"
+msgstr "CSV"
+
+#: library/admin/render.php:405
+msgid "Format"
+msgstr "Formato"
+
+#: library/admin/render.php:380
+msgid "Enter an offset start number and a total number of users to export. <a href=\"%s\" target=\"_blank\">%s</a>"
+msgstr "Introduce un número de inicio de desplazamiento y un número total de usuarios a exportar. <a href=\"%s\" target=\"_blank\">%s</a>"
+
+#: library/admin/render.php:377
+msgid "Total"
+msgstr "Total"
+
+#: library/admin/render.php:376
+msgid "Offset"
+msgstr "Desplazamiento"
+
+#: library/admin/render.php:374
+msgid "Limit Range"
+msgstr "Rango límite"
+
+#: library/admin/render.php:367
+msgid "Pick a start and end user registration date to limit the results."
+msgstr "Elige una fecha de inicio y final de registro de usuario para limitar los resultados."
+
+#: library/admin/render.php:361
+msgid "Registered"
+msgstr "Registrado"
+
+#: library/core/config.php:49
+msgid "All Programs"
+msgstr "Todos los Programas"
+
+#: library/core/config.php:46
+msgid "Programs"
+msgstr "Programas"
+
+#: library/admin/render.php:352
+msgid "Include all of the users <a href=\"%s\" target=\"_blank\">%s</a>"
+msgstr "Incluye a todos los usuarios <a href=\"%s\" target=\"_blank\">%s</a>"
+
+#: library/admin/render.php:347
+msgid "User Roles"
+msgstr "Perfiles de usuario"
+
+#: library/admin/render.php:338
+msgid "Filter the exported users by a WordPress Role. <a href=\"%s\" target=\"_blank\">%s</a>"
+msgstr "Filtra los usuarios exportados por un perfil de WordPress. <a href=\"%s\" target=\"_blank\">%s</a>"
+
+#: library/admin/render.php:312
+msgid "All Roles"
+msgstr "Todos los perfiles"
+
+#: library/admin/render.php:309
+msgid "Role"
+msgstr "Perfil"
+
+#: library/admin/render.php:282
+msgid "Select the user meta keys to export, use the filters to simplify the list."
+msgstr "Selecciona las claves meta de usuario a exportar. Usa los filtros para simplificar la lista."
+
+#: library/admin/render.php:239
+msgid "None"
+msgstr "Ninguno"
+
+#: library/admin/render.php:239
+msgid "Select"
+msgstr "Seleccionar"
+
+#: library/admin/render.php:236
+msgid "Common"
+msgstr "Común"
+
+#: library/admin/render.php:236 library/admin/render.php:239
+msgid "All"
+msgstr "Todos"
+
+#: library/admin/render.php:236
+msgid "Filter"
+msgstr "Filtrar"
+
+#: library/admin/render.php:234
+msgid "User Meta Fields"
+msgstr "Campos meta de usuario"
+
+#: library/admin/render.php:52
+msgid "You do not have sufficient permissions to access this page."
+msgstr "No tienes suficientes permisos para acceder a esta página"
+
+#. Plugin Name of the plugin
+#: library/admin/render.php:33 library/admin/render.php:34
+#: library/admin/render.php:176
+msgid "Export User Data"
+msgstr "Export User Data"

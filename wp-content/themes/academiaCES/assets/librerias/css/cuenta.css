@@ -1,0 +1,210 @@
+/* clases css para la pagina de mi cuenta */
+#MiCuenta h1{
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+.background-log{
+    position: relative;
+    overflow: hidden;
+}
+.background-log:before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    background-image: url(../../../../../../wp-content/uploads/2021/08/bicis-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+}
+.background-log .woocommerce{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 50px;
+}
+.background-log .woocommerce h2{
+    position: relative;
+    top: 90px;
+    left: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: var(--font-size-subtitulo-lg);
+    z-index: 20;
+}
+.background-log .woocommerce .woocommerce-form{
+    padding-top: 70px;
+    width: 100%;
+    max-width: 500px;
+    z-index: 10;
+}
+.background-log .woocommerce .woocommerce-form .woocommerce-form-row label{
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+.background-log .woocommerce .woocommerce-form .woocommerce-form-row input{
+    border-radius: 0 0 4px 4px;
+}
+.background-log .woocommerce .woocommerce-form .woocommerce-button, .background-log .woocommerce-ResetPassword .woocommerce-Button{
+    background-color: black;
+    color: white;
+    position: relative;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.background-log .woocommerce .woocommerce-form .woocommerce-button:hover, .background-log .woocommerce-ResetPassword .woocommerce-Button:hover{
+    left: 3px;
+}
+.background-log .woocommerce-ResetPassword{
+    margin-top: 40px;
+    border: 1px outset #ccc;
+    border-radius: 5px;
+    padding: 28px;
+}
+/* menu de navegacion */
+#MiCuenta #ContenidoCuenta .woocommerce-MyAccount-navigation li{
+    margin-bottom: 15px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+#MiCuenta #ContenidoCuenta .woocommerce-MyAccount-navigation li:hover{
+    background-color: #333;
+}
+#MiCuenta #ContenidoCuenta .woocommerce-MyAccount-navigation .is-active:hover{
+    background-color: inherit;
+}
+#MiCuenta #ContenidoCuenta .woocommerce-MyAccount-navigation li a{
+    display: block;
+    padding: 10px 20px;
+    position: relative;
+}
+#MiCuenta #ContenidoCuenta .woocommerce-MyAccount-navigation .is-active{
+    background-color: white;
+    color: #333;
+    border: 2px solid #333;
+    pointer-events: none;
+}
+#MiCuenta #ContenidoCuenta .woocommerce-MyAccount-navigation .is-active a:after{
+    content:"\1405";
+    position: absolute;
+    right: 20px;
+    font-size: inherit;
+    font-weight: bold;
+    color: inherit;
+}
+/* contenido derecho */
+#MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content p a{
+    font-weight: bold;
+}
+#MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content p:first-of-type{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/* contenido derecho - pedidos */
+.woocommerce-orders #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content table{
+    border-color: rgba(0,0,0,0.6);
+}
+.woocommerce-orders #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-orders-table__cell-order-actions a{
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.woocommerce-orders #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-orders-table__cell-order-actions a:hover{
+    background-color: black;
+    color: white;
+}
+.woocommerce-view-order #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content h2{
+    background-color: black;
+    color: white;
+    border-radius: 0 100px 100px 0;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    margin-bottom: 0;
+}
+/* contenido derecho - direccion */
+.woocommerce-edit-address #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-Address{
+    float: none;
+    max-width: none;
+    width: 100%;
+}
+.woocommerce-edit-address #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-Address header{
+    background-color: black;
+    color: white;
+    border-radius: 0 100px 100px 0;
+}
+.woocommerce-edit-address #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-Address header h3{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    margin-bottom: 0;
+}
+.woocommerce-edit-address #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-Address header a{
+    padding: 10px 20px;
+}
+.woocommerce-edit-address #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-address-fields p{
+    font-size: initial;
+    text-transform: initial;
+    font-weight: normal;
+}
+.woocommerce-edit-address #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-address-fields label{
+    background-color: #ccc;
+    padding-left: 10px;
+    margin-bottom: 0;
+    border-radius: 5px 5px 0 0;
+}
+.woocommerce-edit-address #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-address-fields input{
+    border-radius: 0 0 5px 5px;
+    padding-left: 10px;
+}
+.woocommerce-edit-address #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-address-fields button{
+    background-color: black;
+    color: white;
+    position: relative;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.woocommerce-edit-address #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .woocommerce-address-fields button:hover{
+    left: 4px;
+}
+/* contenido derecho - detalles */
+.woocommerce-edit-account #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .edit-account p{
+    font-size: initial;
+    text-transform: initial;
+    font-weight: normal;
+}
+.woocommerce-edit-account #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .edit-account label{
+    background-color: #ccc;
+    padding-left: 10px;
+    margin-bottom: 0;
+    border-radius: 5px 5px 0 0;
+}
+.woocommerce-edit-account #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .edit-account input{
+    border-radius: 0 0 5px 5px;
+    padding-left: 10px;
+}
+.woocommerce-edit-account #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .edit-account button{
+    background-color: black;
+    color: white;
+    position: relative;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.woocommerce-edit-account #MiCuenta #ContenidoCuenta .woocommerce-MyAccount-content .edit-account button:hover{
+    left: 4px;
+}
+/* mensajes de la pagina */
+#MiCuenta #ContenidoCuenta .woocommerce-Message{
+    border-color: black;
+}
