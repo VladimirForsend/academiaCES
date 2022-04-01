@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/f0rs3ndadm1n2021/public_html/elearning/
+    - /bin/cp -R * $DEPLOYPATH
