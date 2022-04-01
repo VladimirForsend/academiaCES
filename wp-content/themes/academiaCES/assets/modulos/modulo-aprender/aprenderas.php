@@ -4,9 +4,9 @@
 
 <!--Slider-->
 
-<div id="carrusel-reconocimiento" class="container">
+<div id="ces-que-aprenderas" class="container">
 <h3 class="titulo-academia mt-3 mb-3"><?php the_field('titulos_academia');?></h3>
-    <div class="carusel-page-aprenderas">
+    <div class="que-aprenderas-page-aprenderas">
 
         <?php
         $i = 0;
@@ -24,7 +24,7 @@
         $wp_query = new WP_Query($args);
         if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
-                <div class="tarjetas-hotel col-12 col-md-6">
+                <div class="col-12 col-md-6">
                     <figure class="shadow background-white">
                         <div class="bg-fondo-img" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>"></div>
                         <figcaption class="p-3">
