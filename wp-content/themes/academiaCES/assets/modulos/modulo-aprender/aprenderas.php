@@ -25,7 +25,7 @@
         if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
                 <div class="col-12 col-md-6">
-                    <figure class="shadow background-white">
+                    <figure class="row">
                         <div class="bg-fondo-img" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>"></div>
                         <figcaption class="p-3">
                             <h5><?php echo get_the_title(); ?></h5>
