@@ -94,5 +94,16 @@ body {
 
 /*backgrounds de tarjetas*/
 
+#ces-que-aprenderas .bg-fondo-img {
+    height: 133px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 8px;
+    background-position: center;
+}
+
 
 /*backgrounds de tarjetas*/
