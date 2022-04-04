@@ -24,10 +24,10 @@
         $wp_query = new WP_Query($args);
         if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
-                <div class="col-12 col-md-6 col-lg-6">
-                    <figure class="row">
-                        <div class="bg-fondo-img col-12 col-md-6" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>"></div>
-                        <figcaption class="p-3 col-12 col-md-6">
+                <div class="col-12 col-md-6">
+                    <figure class="row d-flex justify-content-center align-items-center">
+                        <div class="bg-fondo-img col-12 col-md-3" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>"></div>
+                        <figcaption class="p-3 col-12 col-md-9">
                             <h5><?php echo get_the_title(); ?></h5>
                             <p><?php echo get_the_excerpt(); ?></p>
                             <a class="boton-reservar" href="<?php the_field('boton_reservar'); ?>">Reservar</a>
