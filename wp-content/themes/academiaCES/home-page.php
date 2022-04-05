@@ -18,7 +18,7 @@ else :
     get_header();
 endif;?>
    <?php include get_template_directory() . '/assets/modulos/modulo-slider/slider.php'; ?>
-	<main id="primary" class="site-main container-fluid">
+	<main id="primary" class="site-main">
 		<?php
 		while ( have_posts() ) :
 			the_post();
