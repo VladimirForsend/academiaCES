@@ -6,14 +6,14 @@
 
 <div id="ces-que-aprenderas" class="container">
 <h3 class="titulo-academia mt-3 mb-3"><?php the_field('titulos_academia');?></h3>
-    <div class="que-aprenderas-page-aprenderas">
+    <div class="que-aprenderas-page-aprenderas row">
 
         <?php
         $i = 0;
         $e = 0;
         $temp = $wp_query;
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        $post_per_page = 4; // -1 shows all posts
+        $post_per_page = 8; // -1 shows all posts
         $args = array(
             'post_type' => 'aprenderas',
             'orderby' => 'date',
