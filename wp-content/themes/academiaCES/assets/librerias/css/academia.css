@@ -284,6 +284,10 @@ body .lp-quiz-buttons .form-button-finish-course {
     padding: 3px!important;
     border-radius: 3px!important;
     font-weight: 700!important;
+    height: 30px!important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
 .lp-archive-courses .learn-press-courses .course .course-item .course-content .course-categories::after {
@@ -308,6 +312,10 @@ body .lp-quiz-buttons .form-button-finish-course {
     padding: 3px!important;
     border-radius: 3px!important;
     font-weight: 700!important;
+    height: 30px!important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
 .lp-archive-courses .learn-press-courses .course .course-item .course-content .course-categories a {
