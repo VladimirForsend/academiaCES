@@ -84,4 +84,3 @@
 
 		</header><!-- #masthead -->
 
-	</div>

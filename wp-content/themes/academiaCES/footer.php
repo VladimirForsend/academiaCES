@@ -11,7 +11,7 @@
  */
 
 ?> 
- 
+ </div>
 <footer id="colophon" class="site-footer background-black mt-3">
 	<div class="container d-flex background-black flex-column flex-lg-row flex-wrap">
 	<!--pie final-->

@@ -52,15 +52,15 @@
 																?></p>
 						<?php endif; ?>
 					</div><!-- .navbar-brand -->
-					
- 
+
+
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
 					<div class="collapse navbar-collapse container-fluid" id="navbarSupportedContent">
-						
-					<div class="row justify-content-between align-items-center wt-full no-gutters">
+
+						<div class="row justify-content-between align-items-center wt-full no-gutters">
 
 
 							<?php
@@ -75,9 +75,9 @@
 							?>
 
 						</div>
-						
+
 					</div>
-					
+
 				</nav><!-- #site-navigation -->
 
 				<?php include get_template_directory() . '/assets/templates/navs/nav-mobile.php'; ?>
@@ -86,4 +86,4 @@
 
 		</header><!-- #masthead -->
 
-	</div>
+	
