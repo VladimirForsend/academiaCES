@@ -52,11 +52,11 @@ jQuery(function($) {
         if ($(document).scrollTop() > 100) {
             $("#masthead").addClass("position-relative");
             $("#masthead").removeClass("position-relative");
-            $("#masthead").addClass("background-black");
+            $("#masthead").addClass("bg-white");
         } else {
             $("#masthead").removeClass("position-relative");
             $("#masthead").addClass("position-relative");
-            $("#masthead").removeClass("background-black");
+            $("#masthead").removeClass("bg-white");
 
         }
     });
