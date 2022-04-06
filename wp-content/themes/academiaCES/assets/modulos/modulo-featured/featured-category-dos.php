@@ -27,7 +27,7 @@
 					'terms'    => 'electricidad',
 				),
 			),
-		);
+		); 
 		$wp_query = new WP_Query($args);
 		if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 

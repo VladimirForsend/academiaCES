@@ -21,7 +21,7 @@
 <!-- seccion modulo de featured uno-->
 <?php include get_template_directory() . '/assets/modulos/modulo-featured/featured-category-uno.php'; ?>
 <!-- seccion modulo de featured uno-->
-
+  
 <!-- seccion banner 1-->
 <div class="container">
 <?php 

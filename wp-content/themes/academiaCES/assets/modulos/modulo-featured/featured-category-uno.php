@@ -2,7 +2,7 @@
 	<?php include get_template_directory() . '/assets/modulos/modulo-featured/featured.css'; ?>
 </style>
 
-<!--Slider-->
+<!--Slider--> 
 
 <div id="post-recientes" class="container-fluid bg-casa bg-white">
 	<div  class="container">

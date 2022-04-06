@@ -179,7 +179,7 @@ add_action('init', 'menu_footer');
 
 /*zona de widgets*/
 function widget_menu_footer()
-{
+{  
     register_sidebar(array('name' => 'Información de la publicación', 'id' => 'interior_sidebar', 'before_widget' => '<div id="%1$S" class="interior-sidebar">', 'after_widget' => '</div>', 'before_title' => '<h5 class="titulo-interior-sidebar">', 'after_title' => '</h5>'));
 
 //footer

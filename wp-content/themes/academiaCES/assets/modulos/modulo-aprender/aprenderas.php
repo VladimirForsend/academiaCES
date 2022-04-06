@@ -3,7 +3,7 @@
 </style>
 
 <!--Slider-->
-
+  
 <div id="ces-que-aprenderas" class="container">
 <h3 class="titulo-academia mt-3 mb-3"><?php the_field('titulos_academia');?></h3>
     <div class="que-aprenderas-page-aprenderas row">
