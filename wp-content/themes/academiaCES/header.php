@@ -26,7 +26,7 @@
 
 	<?php wp_body_open(); ?>
 	<div id="page" class="site sticky-top">
-		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'ecommerce-para-chile'); ?></a><header id="masthead" class="site-header color-white w-100">
+		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'ecommerce-para-chile'); ?></a><header id="masthead" class="site-header color-white w-100 bg-white">
 
 			<div class="container-fluid p-0">
 
