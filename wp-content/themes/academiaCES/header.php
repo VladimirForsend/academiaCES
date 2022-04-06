@@ -67,7 +67,7 @@
 									'theme_location' => 'menu-1',
 									'menu_id'        => 'primary-menu',
 									'menu_class'	 => 'navbar-nav  nav-ces parrafo-sm color-dark',
-									'container_class' => 'col-12 col-lg-12',
+									'container_class' => 'col-12 col-lg-7',
 								)
 							);
 							?>
