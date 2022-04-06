@@ -219,5 +219,16 @@ ul.learn-press-nav-tabs .course-nav.active::before {
     color: #000!important;
 }
 
+body .content-item-summary .form-button-finish-course,
+body .lp-quiz-buttons .form-button-finish-course {
+    float: none;
+    margin: auto;
+    margin-top: auto;
+    display: block;
+    clear: both;
+    text-align: center;
+    margin-top: 1rem;
+}
+
 
 /*estilos elearning*/
