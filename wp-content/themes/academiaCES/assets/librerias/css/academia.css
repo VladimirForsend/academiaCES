@@ -201,5 +201,23 @@ ul.learn-press-nav-tabs .course-nav.active::before {
     background: #000!important;
 }
 
+.pd-2em {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.lp-modal-dialog .lp-modal-footer {
+    padding: 10px 20px;
+    background-color: #000!important;
+    text-align: center!important;
+}
+
+.learnpress-page .lp-button,
+.learnpress-page #lp-button {
+    background-color: #fedb09 !important;
+    color: #000!important;
+}
+
 
 /*estilos elearning*/
