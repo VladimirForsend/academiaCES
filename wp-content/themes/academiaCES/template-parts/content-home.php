@@ -13,7 +13,7 @@
 
 
 <!-- seccion modulo de featured -->
-<?php include get_template_directory() . '/assets/modulos/modulo-featured/featured-base.php'; ?>
+<?php// include get_template_directory() . '/assets/modulos/modulo-featured/featured-base.php'; ?>
 <!-- seccion modulo de featured -->
 <!-- seccion modulo aprender -->
 <?php include get_template_directory() . '/assets/modulos/modulo-aprender/aprenderas.php'; ?>
