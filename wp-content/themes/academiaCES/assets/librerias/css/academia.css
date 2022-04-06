@@ -230,5 +230,9 @@ body .lp-quiz-buttons .form-button-finish-course {
     margin-top: 1rem!important;
 }
 
+.course-summary .course-summary-sidebar.slide-top .course-summary-sidebar__inner {
+    position: relative!important;
+}
+
 
 /*estilos elearning*/
