@@ -267,3 +267,10 @@ body .lp-quiz-buttons .form-button-finish-course {
     align-items: center;
     flex-direction: column;
 }
+
+
+/*estilo tarjetas pagina de archivo*/
+
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course {
+    background-color: #fff;
+}
