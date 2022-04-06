@@ -56,7 +56,7 @@ jQuery(function($) {
         } else {
             $("#masthead").removeClass("position-relative");
             $("#masthead").addClass("position-relative");
-            $("#masthead").removeClass("bg-white");
+
 
         }
     });
