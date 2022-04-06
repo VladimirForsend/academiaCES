@@ -107,3 +107,95 @@ body {
 
 
 /*backgrounds de tarjetas*/
+
+
+/*estlos footer*/
+
+.titulo-menu-footer {
+    color: #fed500;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer .widget_academia_footer {
+    color: #fff;
+}
+
+footer .widget_academia_footer a {
+    color: #fff;
+}
+
+
+/*estilos footer*/
+
+
+/*bg casa*/
+
+.bg-casa {
+    background-image: url('../../img/bg-casa.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+/*bg casa*/
+
+
+/*estilos elearning*/
+
+ul.learn-press-nav-tabs .course-nav.active::before {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 0px!important;
+    background: var(--lp-primary-color);
+    content: "";
+}
+
+#learn-press-course-tabs .course-nav label {
+    background-color: #D5D5D5 !important;
+    color: #000;
+}
+
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(1):checked~.learn-press-nav-tabs .course-nav:nth-child(1) label {
+    color: var(--lp-primary-color);
+    background: #000!important;
+    border-radius: 5px 0px 0px 4px !important;
+}
+
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(2):checked~.learn-press-nav-tabs .course-nav:nth-child(2) label {
+    background: #000!important;
+}
+
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(3):checked~.learn-press-nav-tabs .course-nav:nth-child(3) label {
+    background: #000!important;
+}
+
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(4):checked~.learn-press-nav-tabs .course-nav:nth-child(4) label {
+    background: #000!important;
+}
+
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(5):checked~.learn-press-nav-tabs .course-nav:nth-child(5) label {
+    background: #000!important;
+}
+
+#learn-press-course-tabs input[name="learn-press-course-tab-radio"]:nth-child(6):checked~.learn-press-nav-tabs .course-nav:nth-child(6) label {
+    background: #000!important;
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header {
+    background-color: #000!important;
+    text-align: center;
+    padding: 1rem!important;
+    color: #fff;
+    border-radius: 5px 5px 0px 0px!important;
+}
+
+#learn-press-course-curriculum.course-curriculum ul.curriculum-sections .section-header h3 {
+    color: #fff!important;
+}
+
+
+/*estilos elearning*/

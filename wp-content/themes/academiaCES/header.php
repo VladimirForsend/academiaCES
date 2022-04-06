@@ -25,7 +25,7 @@
 <body <?php body_class(); ?>>
 
 	<?php wp_body_open(); ?>
-	<div id="page" class="site sticky-top">
+	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'ecommerce-para-chile'); ?></a>
 
 		<header id="masthead" class="site-header background-black color-white">
@@ -62,7 +62,7 @@
 						
 					<div class="row justify-content-between align-items-center wt-full no-gutters">
 
-<div class="col-12 col-md-9"><?php echo do_shortcode('[wpdreams_ajaxsearchpro id=1]'); ?></div>
+
 							<?php
 							wp_nav_menu(
 								array(

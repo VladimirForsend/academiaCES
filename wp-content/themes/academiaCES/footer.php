@@ -7,15 +7,29 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package craed_duoc_uc
+ * @package craed_academia-ces_uc
  */
 
 ?>
 
-<footer id="colophon" class="site-footer background-black">
+<footer id="colophon" class="site-footer background-black mt-3">
 	<div class="container d-flex background-black flex-column flex-lg-row flex-wrap">
-		<!--Columna contactanos-->
-		<div class="col col-12 col-lg-4">
+	<!--pie final-->
+	
+		<div class="col-12 d-flex justify-content-between mt-3">
+			<figure class="logo-footer academia-ces col-lg-2 row">
+				<?php
+				if (is_active_sidebar('logo_footer')) :
+					dynamic_sidebar('logo_footer');
+				endif;
+				?>
+
+			</figure>
+			
+		</div>	
+		<hr class="w-100">
+	<!--Columna areas-->
+		<div class="col col-12 col-lg-3">
 
 
 			<?php
@@ -26,9 +40,9 @@
 
 
 		</div>
-		<!--Columna contactanos-->
-		<!--columna oferta--->
-		<div class="col col-12 col-lg-4">
+		<!--Columna areas-->
+		<!--columna Categaría--->
+		<div class="col col-12 col-lg-3">
 			<div class="col col-12 mb-0">
 				<?php
 				if (is_active_sidebar('columna_2')) :
@@ -36,8 +50,11 @@
 				endif;
 				?>
 			</div>
+		</div>
+		<!--columna Categaría--->
 
-			<!-- Columna Enlaces de interés -->
+		<!-- Columna Próximos cursos-->
+		<div class="col col-12 col-lg-3">
 			<div class="col col-12 mb-0">
 				<?php
 				if (is_active_sidebar('columna_2_2')) :
@@ -45,40 +62,23 @@
 				endif;
 				?>
 			</div>
-
 		</div>
-		<!-- / Columna Enlaces de interés -->
+		<!-- Columna Próximos cursos-->
 
-		<!--columna oferta--->
 
-		<!---columna nosotros---->
-		<div class="col col-12 col-lg-4">
+
+		<!--columna Mis cursos--->
+
+		<div class="col col-12 col-lg-3">
 			<?php
 			if (is_active_sidebar('columna_3')) :
 				dynamic_sidebar('columna_3');
 			endif;
 			?>
 		</div>
-		<hr class="w-100">
-		<!--pie final-->
-		<div class="col-12 d-flex justify-content-between mt-5">
-			<figure class="logo-footer duoc col-lg-2 row">
-				<?php
-				if (is_active_sidebar('logo_footer')) :
-					dynamic_sidebar('logo_footer');
-				endif;
-				?>
+		<!--columna Mis cursos--->
 
-			</figure>
-			<figure class="logo-footer acreditacion col-lg-3 row">
-			<?php
-				if (is_active_sidebar('logo_footer_dos')) :
-					dynamic_sidebar('logo_footer_dos');
-				endif;
-				?> 
 
-			</figure>
-		</div>
 	</div>
 	<!---columna nosotros--->
 
@@ -96,4 +96,3 @@
 </body>
 
 </html>
-

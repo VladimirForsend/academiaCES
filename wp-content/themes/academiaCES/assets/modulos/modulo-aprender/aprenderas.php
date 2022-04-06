@@ -30,7 +30,7 @@
                         <figcaption class="p-3 col-12 col-md-9">
                             <h5><?php echo get_the_title(); ?></h5>
                             <p><?php echo get_the_excerpt(); ?></p>
-                            <a class="boton-reservar" href="<?php the_field('boton_reservar'); ?>">Reservar</a>
+                            
                         </caption>
                     </figure>
                 </div>
