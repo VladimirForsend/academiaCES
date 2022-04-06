@@ -58,15 +58,15 @@
   
 					<div class="collapse navbar-collapse container-fluid menu-ces" id="navbarSupportedContent">
 
-						<div class="row nav-ces wt-full">
+						<div class="row wt-full">
 
-							<div class="col-12 col-md-9"></div>
+							<div class="col-12 col-md-5"></div>
 							<?php
 							wp_nav_menu(
 								array(
 									'theme_location' => 'menu-1',
 									'menu_id'        => 'primary-menu',
-									'menu_class'	 => 'navbar-nav d-flex justify-content-around align-items-center parrafo-sm color-light',
+									'menu_class'	 => 'navbar-nav  nav-ces parrafo-sm color-dark',
 									'container_class' => 'col-12 col-lg-12',
 								)
 							);
