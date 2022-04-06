@@ -25,12 +25,10 @@
 <body <?php body_class(); ?>>
 
 	<?php wp_body_open(); ?>
-	<div id="page" class="site">
-		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'ecommerce-para-chile'); ?></a>
+	<div id="page" class="site sticky-top">
+		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'ecommerce-para-chile'); ?></a><header id="masthead" class="site-header color-white w-100">
 
-		<header id="masthead" class="site-header background-black color-white">
-
-			<div class="container">
+			<div class="container-fluid p-0">
 
 				<nav id="site-navigation" class="navbar navbar-expand-lg navbar-dark d-none d-lg-flex">
 					<div class="navbar-brand">
@@ -57,19 +55,19 @@
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
+  
+					<div class="collapse navbar-collapse container-fluid menu-ces" id="navbarSupportedContent">
 
-					<div class="collapse navbar-collapse container-fluid" id="navbarSupportedContent">
+						<div class="row justify-content-between align-items-center wt-full">
 
-						<div class="row justify-content-between align-items-center wt-full no-gutters">
-
-
+							<div class="col-12 col-md-9"></div>
 							<?php
 							wp_nav_menu(
 								array(
 									'theme_location' => 'menu-1',
 									'menu_id'        => 'primary-menu',
 									'menu_class'	 => 'navbar-nav d-flex justify-content-around align-items-center parrafo-sm color-light',
-									'container_class' => 'col-12 col-lg-3',
+									'container_class' => 'col-12 col-lg-12',
 								)
 							);
 							?>
