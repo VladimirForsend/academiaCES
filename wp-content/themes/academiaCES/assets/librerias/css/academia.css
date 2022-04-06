@@ -289,3 +289,13 @@ body .lp-quiz-buttons .form-button-finish-course {
 .lp-archive-courses .learn-press-courses .course .course-item .course-content .course-categories::after {
     content: unset !important;
 }
+
+.lp-archive-courses .learn-press-courses[data-layout="list"] .course .course-item .course-content .course-categories a {
+    clip-path: unset!important;
+}
+
+.lp-archive-courses .learn-press-courses .course .course-item .course-content .course-categories a:first-child {
+    padding: unset !important;
+    background: unset!important;
+    ;
+}
