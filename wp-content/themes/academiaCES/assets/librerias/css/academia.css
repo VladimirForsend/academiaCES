@@ -325,3 +325,10 @@ body .lp-quiz-buttons .form-button-finish-course {
 .lp-archive-courses .learn-press-courses .course .course-item .course-content .course-instructor a {
     color: #fff!important;
 }
+
+
+/*estilos breadcrumb*/
+
+.learn-press-breadcrumb {
+    margin: 1rem auto 1rem auto!important;
+}
