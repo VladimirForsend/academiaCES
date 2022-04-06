@@ -221,13 +221,13 @@ ul.learn-press-nav-tabs .course-nav.active::before {
 
 body .content-item-summary .form-button-finish-course,
 body .lp-quiz-buttons .form-button-finish-course {
-    float: none;
-    margin: auto;
-    margin-top: auto;
-    display: block;
-    clear: both;
-    text-align: center;
-    margin-top: 1rem;
+    float: none!important;
+    margin: auto!important;
+    margin-top: auto!important;
+    display: block!important;
+    clear: both!important;
+    text-align: center!important;
+    margin-top: 1rem!important;
 }
 
 
