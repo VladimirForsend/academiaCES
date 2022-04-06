@@ -58,7 +58,7 @@
   
 					<div class="collapse navbar-collapse container-fluid menu-ces" id="navbarSupportedContent">
 
-						<div class="row justify-content-between align-items-center wt-full">
+						<div class="row nav-ces wt-full">
 
 							<div class="col-12 col-md-9"></div>
 							<?php

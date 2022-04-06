@@ -3,6 +3,18 @@ body {
 }
 
 
+/*estilos header*/
+
+.nav-ces {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
+/*estilos header*/
+
+
 /*estilos academia tarjetas*/
 
 .bg-fondo-img {
