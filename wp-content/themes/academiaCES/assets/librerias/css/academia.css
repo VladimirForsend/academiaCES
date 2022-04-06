@@ -236,3 +236,21 @@ body .lp-quiz-buttons .form-button-finish-course {
 
 
 /*estilos elearning*/
+
+
+/*estilos certificado*/
+
+.single-certificate-content {
+    max-width: 90%;
+    margin: 0 auto;
+    min-height: 40px;
+    overflow: hidden;
+}
+
+.certificate {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
