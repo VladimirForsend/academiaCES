@@ -46,7 +46,8 @@ a:hover {
 /* clases para el marcador de pagina actual en el menu */
 
 .current_page_item {
-    color: var(--color-generico-blanco);
+    color: var(--color-generico-dark);
+    border-bottom: 3px solid var(--color-generico-dark);
 }
 
 
