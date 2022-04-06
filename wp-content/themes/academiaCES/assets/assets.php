@@ -275,13 +275,13 @@ add_action( 'wp', 'members_only' );
 function my_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
-        background-image: url('http://desarrollo-agencia.cl/elearning/wp-content/uploads/2022/02/logo-ces.png');
-		height:65px;
-		width:320px;
-		background-size:100%;
-		background-repeat: no-repeat;
-        	padding-bottom: 30px;
-        }
+  background-image: url('http://desarrollo-agencia.cl/elearning/wp-content/uploads/2022/02/logo-ces.png');
+  height: 65px;
+  width: 320px;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 30px;
+}
         body.login{
         background-color: #000;  
 background-size: cover;  
