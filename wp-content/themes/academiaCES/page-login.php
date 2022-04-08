@@ -29,7 +29,7 @@
 	
 	if ( ! $user_id && false == email_exists( $user_email ) ) {
 		$random_password = wp_generate_password( $length = 12, $include_standard_special_chars = false );
-		$user_id = wp_create_user( $user_name, $random_password, $user_email );
+		$user_id = wp_create_user( $user_login, $random_password, $user_email );
 	}
 	
 	$user = get_userdatabylogin($user_login);
