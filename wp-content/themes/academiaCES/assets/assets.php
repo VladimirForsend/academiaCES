@@ -260,7 +260,7 @@ include get_template_directory() . '/assets/modulos/modulo-slider/core-slider.ph
 //modulo-aprender. 
 include get_template_directory() . '/assets/modulos/modulo-aprender/core-aprenderas.php';
 
-
+/* fix new funcionality marcos abarza
 // Redirect users who arent logged in...
 function members_only() {
     global $pagenow;
@@ -269,7 +269,7 @@ function members_only() {
           auth_redirect();
 }
 add_action( 'wp', 'members_only' );
-
+*/
 
 //formulario de login
 function my_login_logo() { ?>
