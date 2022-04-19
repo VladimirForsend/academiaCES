@@ -34,5 +34,5 @@
 
 		?>
 		<script>
-			window.location = <?php echo  get_home_url();  ?>
+			window.location = '<?php echo  get_home_url();  ?>';
 		</script>
