@@ -36,6 +36,8 @@
 	do_action('wp_login', $user_login);
 	// Automatic login //
 	*/
+
+	echo $user_id;
 	$user = get_user_by('login', $user_login );
 
 	// Redirect URL //
@@ -44,9 +46,10 @@
 		wp_clear_auth_cookie();
 		wp_set_current_user ( $user->ID );
 		wp_set_auth_cookie  ( $user->ID );
-
-		$redirect_to = get_home_url();
-		wp_safe_redirect( $redirect_to );
-		exit();
+	
 	}
 		?>
+
+	<script>
+		window.location = '<?php echo  get_home_url();  ?>';
+	</script>
