@@ -43,9 +43,11 @@
 	// Redirect URL //
 	if ( !is_wp_error( $user ) )
 	{
+		clean_user_cache($user->ID);
 		wp_clear_auth_cookie();
-		wp_set_current_user ( $user->ID );
-		wp_set_auth_cookie  ( $user->ID );
+		wp_set_current_user($user->ID);
+		wp_set_auth_cookie($user->ID, true, false);
+		update_user_caches($user);
 	
 	}
 		?>
