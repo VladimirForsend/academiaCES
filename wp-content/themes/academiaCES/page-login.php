@@ -42,5 +42,11 @@
 
 	do_action('wp_login', $user_login);
 
+		?>
+		<script>
+			window.location = <?php echo  get_home_url();  ?>
+		</script>
+
+<?php
 	
 //get_footer();
