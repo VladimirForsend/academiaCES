@@ -28,14 +28,14 @@
 		$user = get_userdatabylogin($user_login);	
 		$user_id = $user->ID;
 	}
-
+/*
 	wp_set_current_user($user_id, $user_login);
 
 	wp_set_auth_cookie($user_id);
 
 	do_action('wp_login', $user_login);
 	// Automatic login //
-	$user_login = "Admin";
+	*/
 	$user = get_user_by('login', $user_login );
 
 	// Redirect URL //
