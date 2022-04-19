@@ -10,7 +10,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
-
+	get_header();
 	$user_login = sanitize_user( $_GET['username'] );
 	$user_email = sanitize_user( $_GET['email']    );
 
@@ -23,11 +23,11 @@
 	if ( ! $user_id && false == email_exists( $user_email ) ) {
 		$random_password = wp_generate_password( $length = 12, $include_standard_special_chars = false );
 		$user_id = wp_create_user( $user_login, $random_password, $user_email );
+	}else{
+		
+		$user = get_userdatabylogin($user_login);	
+		$user_id = $user->ID;
 	}
-	
-	$user = get_userdatabylogin($user_login);
-
-	$user_id = $user->ID;
 
 	wp_set_current_user($user_id, $user_login);
 
@@ -36,6 +36,6 @@
 	do_action('wp_login', $user_login);
 
 		?>
-		<script>
-			//window.location = '<?php echo  get_home_url();  ?>';
-		</script>
+	<script>
+		//window.location = '<?php echo  get_home_url();  ?>';
+	</script>
