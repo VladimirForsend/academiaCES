@@ -9,20 +9,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package craed_duoc_uc
  */
 
-	//$user_login = 'marcos';
-
-
-	
 	$user_login = sanitize_user( $_GET['username'] );
 	$user_email = sanitize_user( $_GET['email']    );
-
-	
-	//$user_login = "10276571-0" ;
-	//$user_email = "asunciona@gmail.com"   ;
-
 
 	$user_id = username_exists( $user_login );
 
@@ -46,7 +36,3 @@
 		<script>
 			window.location = <?php echo  get_home_url();  ?>
 		</script>
-
-<?php
-	
-//get_footer();
