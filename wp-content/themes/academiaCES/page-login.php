@@ -14,6 +14,9 @@
 	$user_login = sanitize_user( $_POST['username'] );
 	$user_email = sanitize_user( $_POST['email']    );
 
+	echo $user_login;
+	echo $user_email;
+	
 	$user_id = username_exists( $user_login );
 
 	
