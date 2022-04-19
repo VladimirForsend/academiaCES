@@ -16,8 +16,8 @@
 
 	echo $user_login;
 	echo $user_email;
-	$user_login = "10276231-0" ;
-	$user_email = "asunciona2@gmail.com"   ;
+	$user_login = "marcos_user" ;
+	$user_email = "marcosabarza@gmail.com"   ;
 
 	$user_id = username_exists( $user_login );
 
