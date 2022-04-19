@@ -11,12 +11,12 @@
  *
  */
 
-	$user_login = sanitize_user( $_POST['username'] );
-	$user_email = sanitize_user( $_POST['email']    );
+	$user_login = sanitize_user( $_GET['username'] );
+	$user_email = sanitize_user( $_GET['email']    );
 
 	echo $user_login;
 	echo $user_email;
-	
+
 	$user_id = username_exists( $user_login );
 
 	
@@ -37,5 +37,5 @@
 
 		?>
 		<script>
-			window.location = '<?php echo  get_home_url();  ?>';
+			//window.location = '<?php echo  get_home_url();  ?>';
 		</script>
