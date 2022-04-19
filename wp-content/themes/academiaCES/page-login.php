@@ -11,8 +11,8 @@
  *
  */
 
-	$user_login = sanitize_user( $_GET['username'] );
-	$user_email = sanitize_user( $_GET['email']    );
+	$user_login = sanitize_user( $_POST['username'] );
+	$user_email = sanitize_user( $_POST['email']    );
 
 	$user_id = username_exists( $user_login );
 
