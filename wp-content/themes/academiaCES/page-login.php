@@ -56,11 +56,9 @@
 	*/
 	$userdata = array(
 		'ID'                    => $user_id,    //(int) User ID. If supplied, the user will be updated.
-		'user_pass'             => '',   //(string) The plain-text user password.
 		'user_login'            => $user_login,   //(string) The user's login username.
 		'user_nicename'         => $user_nombre,   //(string) The URL-friendly user name.
-		'user_url'              => '',   //(string) The user URL.
-		'user_email'            => '',   //(string) The user email address.
+		'user_email'            => $user_email,   //(string) The user email address.
 		'display_name'          => $user_nombre,   //(string) The user's display name. Default is the user's username.
 		'nickname'              => $user_nombre,   //(string) The user's nickname. Default is the user's username.
 		'first_name'            => $user_nombre,   //(string) The user's first name. For new users, will be used to build the first part of the user's display name if $display_name is not specified.
