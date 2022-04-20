@@ -70,8 +70,8 @@
 	wp_update_user( $userdata ) ;
 	$user_nivel_solo = str_replace(".jpg","" , $user_nivel );
 
-	update_user_meta( $user_id, '_lp_custom_register','a:1:{i:7688225;s:9:"'.$user_cel.'";} ' );
-	update_user_meta( $user_id, '_lp_custom_register','a:1:{i:6821613;s:9:"'.$user_nivel_solo.'";} ' ); 
+	//update_user_meta( $user_id, '_lp_custom_register','a:1:{i:7688225;s:9:"'.$user_cel.'";} ' );
+	//update_user_meta( $user_id, '_lp_custom_register','a:1:{i:6821613;s:9:"'.$user_nivel_solo.'";} ' ); 
 	
 
 	wp_set_current_user($user_id, $user_login);
