@@ -12,48 +12,25 @@
  * @package craed_duoc_uc
  */
 
-	$user_login = 'marcos';
+	$user_login = sanitize_user( $_POST['username'] );
+	$user_email = sanitize_user( $_POST['email']    );
+	$user_nombre = sanitize_user( $_POST['nombre']    );
+	$user_apellido = sanitize_user( $_POST['apellido']    );
+	$user_nivel = sanitize_user( $_POST['nivel']    );
+	$user_cel = sanitize_user( $_POST['cel']    );
 
-
-	
-	//$user_login = sanitize_user( $_POST['username'] );
-	//$user_email = sanitize_user( $_POST['email']    );
-
-	$user_login = sanitize_user( $_GET['username'] );
-	$user_email = sanitize_user( $_GET['email']    );
-	$user_nombre = sanitize_user( $_GET['nombre']    );
-	$user_apellido = sanitize_user( $_GET['apellido']    );
-	$user_nivel = sanitize_user( $_GET['nivel']    );
-	$user_cel = sanitize_user( $_GET['cel']    );
-
-	//$user_login = "10276571-0" ;
-	//$user_email = "asunciona@gmail.com"   ;
-	//$user_login = "10276571-0" ;
-	//$user_email = "asunciona@gmail.com"   ;
-
-	
 	$user_id = username_exists( $user_login );
-
 	
 	if ( ! $user_id && false == email_exists( $user_email ) ) {
 		$random_password = wp_generate_password( $length = 12, $include_standard_special_chars = false );
-		$user_id = wp_create_user( $user_login, $random_password, $user_email );
-
-		update_user_meta( $customer_id, 'billing_first_name', sanitize_text_field( $_POST['billing_first_name'] ) );
-        
+		$user_id = wp_create_user( $user_login, $random_password, $user_email );        
 	}
 	
 	$user = get_userdatabylogin($user_login);
 
 	$user_id = $user->ID;
-/*
-	$user_login
-	$user_email
-	$user_nombre
-	$user_apellido
-	$user_nivel
-	$user_cel
-	*/
+
+	$user_nivel_solo = str_replace(".jpg","" , $user_nivel );
 	$userdata = array(
 		'ID'                    => $user_id,    //(int) User ID. If supplied, the user will be updated.
 		'user_login'            => $user_login,   //(string) The user's login username.
@@ -63,16 +40,11 @@
 		'nickname'              => $user_nombre,   //(string) The user's nickname. Default is the user's username.
 		'first_name'            => $user_nombre,   //(string) The user's first name. For new users, will be used to build the first part of the user's display name if $display_name is not specified.
 		'last_name'             => $user_apellido,   //(string) The user's last name. For new users, will be used to build the second part of the user's display name if $display_name is not specified.
-	 
+		'user_url'             	=> $user_cel, 
+		'user_nivel'            => $user_nivel_solo 
 	);
 
-
 	wp_update_user( $userdata ) ;
-	$user_nivel_solo = str_replace(".jpg","" , $user_nivel );
-
-	//update_user_meta( $user_id, '_lp_custom_register','a:1:{i:7688225;s:9:"'.$user_cel.'";} ' );
-	//update_user_meta( $user_id, '_lp_custom_register','a:1:{i:6821613;s:9:"'.$user_nivel_solo.'";} ' ); 
-	
 
 	wp_set_current_user($user_id, $user_login);
 
