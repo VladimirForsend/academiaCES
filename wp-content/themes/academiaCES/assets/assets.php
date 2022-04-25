@@ -260,16 +260,16 @@ include get_template_directory() . '/assets/modulos/modulo-slider/core-slider.ph
 //modulo-aprender. 
 include get_template_directory() . '/assets/modulos/modulo-aprender/core-aprenderas.php';
 
-/* fix new funcionality marcos abarza
+/* fix new funcionality marcos abarza*/
 // Redirect users who arent logged in...
 function members_only() {
     global $pagenow;
     // Check to see if user in not logged in and not on the login page
     if( !is_user_logged_in() && $pagenow != 'wp-login.php' )
-          auth_redirect();
+        wp_redirect( 'http://dev.circulodeespecialistas.cl/user/me/edit/' ); 
 }
 add_action( 'wp', 'members_only' );
-*/
+
 
 //formulario de login
 function my_login_logo() { ?>
@@ -290,6 +290,21 @@ background-size: cover;
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
+
+
+add_action( 'show_user_profile', 'display_user_custom_hash' );
+add_action( 'edit_user_profile', 'display_user_custom_hash' );
+
+function display_user_custom_hash( $user ) { ?>
+    <h3>USERMETA Fields</h3>
+    <table class="form-table">
+        <tr>
+            <th><label>Nivel Socio</label></th>
+            <td><input type="text" value="<?php echo get_user_meta( $user->ID, 'user_nivel', true ); ?>" class="regular-text" readonly=readonly /></td>
+        </tr>
+    </table>
+    <?php
+}
 
 /*add_filter('auth_cookie_expiration', 'my_expiration_filter', 99, 3);
 function my_expiration_filter($seconds, $user_id, $remember){
