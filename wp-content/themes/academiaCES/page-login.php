@@ -19,6 +19,10 @@
 	$user_nivel = sanitize_user( $_POST['nivel']    );
 	$user_cel = sanitize_user( $_POST['cel']    );
 
+
+	if($user_login =="" || $user_login == null  ){
+        wp_redirect( 'http://dev.circulodeespecialistas.cl/user/me/edit/' ); 
+	}
 	$user_id = username_exists( $user_login );
 	
 	if ( ! $user_id && false == email_exists( $user_email ) ) {
