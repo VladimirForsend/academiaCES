@@ -11,7 +11,7 @@
  *
  * @package craed_duoc_uc
  */
-
+global $pagenow;
 	$user_login = sanitize_user( $_POST['username'] );
 	$user_email = sanitize_user( $_POST['email']    );
 	$user_nombre = sanitize_user( $_POST['nombre']    );
@@ -19,7 +19,7 @@
 	$user_nivel = sanitize_user( $_POST['nivel']    );
 	$user_cel = sanitize_user( $_POST['cel']    );
 
-
+echo $pagenow ;
 	if($user_login =="" || $user_login == null  ){
         wp_redirect( 'http://dev.circulodeespecialistas.cl/user/me/edit/' ); 
 	}
@@ -58,5 +58,5 @@
 
 	?>
 		<script>
-		window.location = '<?php echo  get_home_url();  ?>';
+	//	window.location = '<?php echo  get_home_url();  ?>';
 	</script>
