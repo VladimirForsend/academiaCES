@@ -58,5 +58,5 @@ global $pagenow;
 
 	?>
 		<script>
-	//	window.location = '<?php echo  get_home_url();  ?>';
-	</script>
+		window.location = '<?php echo  get_home_url();  ?>';
+		</script>
