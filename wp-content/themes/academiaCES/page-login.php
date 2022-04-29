@@ -19,7 +19,7 @@ global $pagenow;
 	$user_nivel = sanitize_user( $_POST['nivel']    );
 	$user_cel = sanitize_user( $_POST['cel']    );
 
-echo $pagenow ;
+
 	if($user_login =="" || $user_login == null  ){
         wp_redirect( 'http://dev.circulodeespecialistas.cl/user/me/edit/' ); 
 	}
