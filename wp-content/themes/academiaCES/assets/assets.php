@@ -311,7 +311,8 @@ function custom_meta_data( $user ) {
 			       class="regular-text"
 				/>
 			</td>
-            <th>
+        </tr>
+        <tr>
                 <label for="user_cel"><?php esc_html_e( 'Celular Socio', 'crf' ); ?></label></th>
 			<td>
 				<input type="text" 			     

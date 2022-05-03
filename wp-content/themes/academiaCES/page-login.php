@@ -34,7 +34,6 @@ global $pagenow;
 
 	$user_id = $user->ID;
 
-	$user_nivel_solo = str_replace(".jpg","" , $user_nivel );
 	$userdata = array(
 		'ID'                    => $user_id,    //(int) User ID. If supplied, the user will be updated.
 		'user_login'            => $user_login,   //(string) The user's login username.
@@ -43,12 +42,13 @@ global $pagenow;
 		'display_name'          => $user_nombre,   //(string) The user's display name. Default is the user's username.
 		'nickname'              => $user_nombre,   //(string) The user's nickname. Default is the user's username.
 		'first_name'            => $user_nombre,   //(string) The user's first name. For new users, will be used to build the first part of the user's display name if $display_name is not specified.
-		'last_name'             => $user_apellido,   //(string) The user's last name. For new users, will be used to build the second part of the user's display name if $display_name is not specified.
-		'user_cel'             	=> $user_cel, 
-		'user_nivel'            => $user_nivel_solo 
+		'last_name'             => $user_apellido   //(string) The user's last name. For new users, will be used to build the second part of the user's display name if $display_name is not specified.
 	);
 
 	wp_update_user( $userdata ) ;
+
+	update_user_meta( $user_id, 'user_cel', $user_cel );
+	update_user_meta( $user_id, 'user_nivel', $user_nivel );
 
 	wp_set_current_user($user_id, $user_login);
 
