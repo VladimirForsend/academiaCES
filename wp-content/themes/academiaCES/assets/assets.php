@@ -302,7 +302,9 @@ function custom_meta_data( $user ) {
 
 	<table class="form-table">
 		<tr>
-			<th><label for="user_nivel"><?php esc_html_e( 'Nivel Socio', 'crf' ); ?></label></th>
+			<th>
+                <label for="user_nivel"><?php esc_html_e( 'Nivel Socio', 'crf' ); ?></label>
+            </th>
 			<td>
 				<input type="text" disabled			     
 			       id="user_nivel"
@@ -313,7 +315,9 @@ function custom_meta_data( $user ) {
 			</td>
         </tr>
         <tr>
-                <label for="user_cel"><?php esc_html_e( 'Celular Socio', 'crf' ); ?></label></th>
+            <th>  
+                <label for="user_cel"><?php esc_html_e( 'Celular Socio', 'crf' ); ?></label>
+            </th>
 			<td>
 				<input type="text" 			     
 			       id="user_cel"
