@@ -291,19 +291,56 @@ background-size: cover;
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 
+add_action( 'show_user_profile', 'custom_meta_data' );
+add_action( 'edit_user_profile', 'custom_meta_data' );
 
-add_action( 'show_user_profile', 'display_user_custom_hash' );
-add_action( 'edit_user_profile', 'display_user_custom_hash' );
+function custom_meta_data( $user ) {
+	$nivel = get_the_author_meta( 'user_nivel', $user->ID );
+    $cel = get_the_author_meta( 'user_cel', $user->ID );
+	?>
+	<h3><?php esc_html_e( 'Información de la cuenta', 'crf' ); ?></h3>
 
-function display_user_custom_hash( $user ) { ?>
-    <h3>USERMETA Fields</h3>
-    <table class="form-table">
-        <tr>
-            <th><label>Nivel Socio</label></th>
-            <td><input type="text" value="<?php echo get_user_meta( $user->ID, 'user_nivel', true ); ?>" class="regular-text" readonly=readonly /></td>
-        </tr>
-    </table>
-    <?php
+	<table class="form-table">
+		<tr>
+			<th><label for="user_nivel"><?php esc_html_e( 'Nivel Socio', 'crf' ); ?></label></th>
+			<td>
+				<input type="text" disabled			     
+			       id="user_nivel"
+			       name="user_nivel"
+			       value="<?php echo esc_attr( $nivel ); ?>"
+			       class="regular-text"
+				/>
+			</td>
+            <th>
+                <label for="user_cel"><?php esc_html_e( 'Celular Socio', 'crf' ); ?></label></th>
+			<td>
+				<input type="text" 			     
+			       id="user_cel"
+			       name="user_cel"
+			       value="<?php echo esc_attr( $cel ); ?>"
+			       class="regular-text"
+				/>
+			</td>
+		</tr>
+	</table>
+	<?php
+}
+
+add_action( 'personal_options_update', 'custom_update_field_socio' );
+add_action( 'edit_user_profile_update', 'custom_update_field_socio' );
+
+function custom_update_field_socio( $user_id ) {
+	if ( ! current_user_can( 'edit_user', $user_id ) ) {
+		return false;
+	}
+
+	if ( ! empty( $_POST['user_nivel'] )  ) {
+		update_user_meta( $user_id, 'user_nivel', intval( $_POST['user_nivel'] ) );
+	}
+    
+	if ( ! empty( $_POST['user_cel'] )  ) {
+		update_user_meta( $user_id, 'user_cel', intval( $_POST['user_cel'] ) );
+	}
 }
 
 /*add_filter('auth_cookie_expiration', 'my_expiration_filter', 99, 3);
