@@ -151,6 +151,19 @@ jQuery(function($) {
             }else{ 
 
                 */
+
+                let date = new Date()
+
+                let day = date.getDate()
+                let month = date.getMonth() + 1
+                let year = date.getFullYear()
+
+                if(month < 10){
+                    fecha = day+"-0"+month+"-"+year;
+                }else{
+                    fecha = day+"-0"+month+"-"+year;
+                }
+
                 setTimeout(function(){                    
                     $("#data-locales").append('<div class="cont-preload"><div class="preloader"></div></div>');
                 }, 1);
@@ -192,7 +205,7 @@ jQuery(function($) {
                     success: function (response) {                         
                         console.log(response);    
                            
-                        ExportData(response, fecha_antes_val,fecha_despues_val);     
+                        ExportData(response, fecha,fecha);     
                     }
                 });    //fin ajax                                                 
             /*}*/
