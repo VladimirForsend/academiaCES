@@ -19,8 +19,8 @@ add_action( 'admin_menu', 'academia_Add_My_Admin_Link' );
 function academia_Add_My_Admin_Link()
 {
     add_menu_page(
-        'reporteria', // Title of the page
-        'reporteria', // Text to show on the menu link
+        'Reporteria', // Title of the page
+        'Reporteria', // Text to show on the menu link
         'administrator',
         plugin_dir_path(__FILE__) . '/academia-page-reporteria.php',
         null,
