@@ -31,7 +31,7 @@
 }
 
 #page-admin-reporteria .secondary-color {
-    color: #eb1c25;
+    color: #f5df26;
 }
 
 #page-admin-reporteria .search-box {
@@ -43,7 +43,7 @@
 
 #page-admin-reporteria .primary-color.bold {
     font-weight: 600;
-    color: #06038d;
+    color: #000;
 }
 
 #page-admin-reporteria .semi-bold {
@@ -55,7 +55,7 @@
 }
 
 #page-admin-reporteria .drop .drop-options a {
-    color: #06048d;
+    color: #000;
 }
 
 /***********************************/
@@ -63,18 +63,15 @@
 /*********************************/
 
 .tablenav.top div#data-clases .row:nth-child(odd){
-    background-color: #f2f1f9;
+    background-color: #f5df262f;
 }
 
-.tablenav.top div#data-clases .row p:nth-child(1){
-    color: #eb1c25;
+.tablenav.top div#data-clases .row p:nth-child(1) {
+    color: #a09221;
+    font-weight: bold;
 }
-.tablenav.top div#data-clases .row p:nth-child(3){
-    color:#eb1c25;
-}
-.tablenav.top div#data-clases .row p:nth-child(5){
-    color:#eb1c25;
-}
+
+
 .tablenav.top div#data-clases .row{
     color: #585858;
     font-weight: 500;
@@ -106,7 +103,7 @@
 
 .tablenav.top .container-fluid .row h4.screen-reader-text {
     font-size: 1.5rem;
-    color: #06038d;
+    color: #000;
 }
 
 button#search-submit {
@@ -120,7 +117,7 @@ button#search-submit {
 }
 
 button#search-submit:hover, button#search-submit:active {
-    background: #eb1c25;
+    background: #f5df26;
     box-shadow: 2px 2px 2px rgba(255, 74, 74, 0.2);
     color: #ffff;
     border: 1px solid #fcfcfc00;
@@ -160,7 +157,7 @@ button#post-query-submit:hover, button#post-query-submit:active {
     border-radius: .4rem;
     width: 120px;
     padding: 5px;
-    background: #eb1c25;
+    background: #f5df26;
     box-shadow: 2px 2px 2px rgba(255, 74, 74, 0.2);
 }
 
@@ -170,13 +167,13 @@ button#post-query-submit:hover, button#post-query-submit:active {
 }
 
 h6 {
-    color:#06038D;
+    color:#000;
 }
 .tablenav.top i.fas {
-    color: #eb1c25;
+    color: #f5df26;
 }
 .tablenav.top i.far{
-    color: #eb1c25;
+    color: #f5df26;
 }
 
 .boton-enviar button#post-query-submit {
@@ -196,7 +193,7 @@ h6 {
 
 .boton-imprimir button#print-query-btn {
     background: #1d2327;
-    color: #ffffff;
+    color: #f5df26;
     border: 1px solid #1d2327;
     margin-bottom: 0.5rem;
     font-weight: 500;
@@ -205,18 +202,18 @@ h6 {
 }
 
 .boton-enviar button#post-query-submit:hover {
-    background-color: #eb1c25;
-    border: 1px solid #eb1c25;
+    background-color: #f5df26;
+    border: 1px solid #f5df26;
     box-shadow: 0 1px 0 rgb(0 0 0 / 5%);
-    color:#ffffff;    
+    color: #000;  
 }
 
 .boton-imprimir button#print-query-btn:hover {
-    background-color: #eb1c25;
-    border: 1px solid #eb1c25;
+    background-color: #f5df26;
+    border: 1px solid #f5df26;
     box-shadow: 0 1px 0 rgb(0 0 0 / 5%);
-    color:#ffffff;    
-}
+    color: #000;
+  }
 
 .filtros-pagos {
     padding-left: 0;
@@ -233,14 +230,14 @@ h6 {
 }
 
 .row.titulo-principal-co span.color {
-    color: #eb1c25;
+    color: #f5df26;
 }
 .tablenav.top i.fas:hover {
     color: #f7f7f7;
 }
 
 .tablenav.top .filtros-estados  i.fas:hover, .tablenav.top .filtros-pagos i.fas:hover{
-    color: #06028d;
+    color: #000;
 }
 
 div#data-clases p.col-1.data-admin {

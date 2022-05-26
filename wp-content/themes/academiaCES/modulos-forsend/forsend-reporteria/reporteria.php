@@ -46,9 +46,10 @@
 	<script src='<?php echo $actual_link."/modulos-forsend/forsend-reporteria/js/jquery-ui.js";?>' ></script>
 
 	<script src='<?php echo $actual_link."/modulos-forsend/forsend-reporteria/js/xlsx.full.min.js";?>' ></script>
-
+	<?php /*
 	<script src='<?php echo $actual_link."/modulos-forsend/forsend-reporteria/js/dropdown.js";?>' ></script>
 	<link rel="stylesheet" href='<?php echo $actual_link."/modulos-forsend/forsend-reporteria/css/dropdown.css";?>' >
+	 */?>
 	<body id="page-admin-reporteria" class="modulo-reporteria">
      
 		<div class="header-reporteria row mb-1">
@@ -56,7 +57,7 @@
 				<img class="logo-reporteria" alt="AcademiaCES" src="<?php echo $actual_link."/modulos-forsend/forsend-reporteria/img/ces.ico"; ?>" width="250" height="110">
 			</div>
 			<div class="col-12 col-md-4 justify-content-center align-items-center d-flex">
-					<h3 class="text-center primary-color">reporteria</h3>
+					<h3 class="text-center primary-color">Reporteria Academia CES</h3>
 			</div>
 			<div class="col-12 col-md-4 flex-column justify-content-center align-items-center d-flex pr-5">
 				<!--
@@ -186,9 +187,12 @@
 						Celular
 					</h5>
 					<h5 class="col-1"> 
+						Nivel
+					</h5>
+					<h5 class="col-1"> 
 						Id Curso
 					</h5>
-					<h5 class="col-2"> 
+					<h5 class="col-1"> 
 						Nombre clase
 					</h5>
 					<h5 class="col-1"> 
@@ -234,7 +238,7 @@
 									<p class="col-1 data-admin text-center"> 
 										<?php echo $cursos[$i]->id_curso; ?>									
 									</p>
-									<p class="col-2 data-admin text-center  overflow-auto"> 
+									<p class="col-1 data-admin text-center  overflow-auto"> 
 										<?php echo $cursos[$i]->nom_curso; ?>
 									</p>
 									<p class="col-1 data-admin text-center"> 
