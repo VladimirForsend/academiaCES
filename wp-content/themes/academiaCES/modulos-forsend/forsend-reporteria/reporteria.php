@@ -172,10 +172,10 @@
 			<div class="container-fluid mt-2 pl-0 pr-0">
 				<div class="row seccion-titulos-datos m-0">				
 				<h5 class="col-1"> 
-						rut
+						Rut
 					</h5>
-					<h5 class="col-1" style="text-align: initial;padding-left: 10px;"> 
-						email
+					<h5 class="col-1" > 
+						Email
 					</h5>
 					<h5 class="col-1"> 
 						Nombre
