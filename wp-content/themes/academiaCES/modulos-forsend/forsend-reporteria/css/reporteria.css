@@ -1,0 +1,322 @@
+
+/* HEADER reporteria */
+#page-admin-reporteria .wrap h1 {
+    display: none;
+}
+
+#page-admin-reporteria h6 {
+    color: #1d2327;
+}
+
+.logo-reporteria {
+    padding: 0 0 1rem 1rem;
+    max-width: 150px;
+    height: auto;
+}
+
+#page-admin-reporteria select, #page-admin-reporteria input {
+    height: 2.3rem;
+    padding: 0 .5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+#page-admin-reporteria :focus {
+    outline: none;
+}
+
+/* GENERALS */
+#page-admin-reporteria .primary-color {
+    color: #1d2327;
+}
+
+#page-admin-reporteria .secondary-color {
+    color: #eb1c25;
+}
+
+#page-admin-reporteria .search-box {
+    text-align: left;
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+}
+
+#page-admin-reporteria .primary-color.bold {
+    font-weight: 600;
+    color: #06038d;
+}
+
+#page-admin-reporteria .semi-bold {
+    font-weight: 400!important;
+}
+
+#page-admin-reporteria .drop .drop-options {
+    background: #f3f3f3;
+}
+
+#page-admin-reporteria .drop .drop-options a {
+    color: #06048d;
+}
+
+/***********************************/
+/********ANTONIO 25-06-2021********/
+/*********************************/
+
+.tablenav.top div#data-clases .row:nth-child(odd){
+    background-color: #f2f1f9;
+}
+
+.tablenav.top div#data-clases .row p:nth-child(1){
+    color: #eb1c25;
+}
+.tablenav.top div#data-clases .row p:nth-child(3){
+    color:#eb1c25;
+}
+.tablenav.top div#data-clases .row p:nth-child(5){
+    color:#eb1c25;
+}
+.tablenav.top div#data-clases .row{
+    color: #585858;
+    font-weight: 500;
+}
+
+.tablenav.top .row h5 {
+    color: #ffffff;
+    /* box-shadow: 0px 1px 7px rgb(0 0 0 / 20%); */
+    /* border-radius: 10px; */
+    /* margin: 0px 10px 0px 10px; */
+    /* max-width: 8.1%; */
+    font-size: .85rem;
+    text-align: center;
+    padding: 10px 0px;
+    height: 2.5rem;
+    margin: 0;
+}
+
+.tablenav.top .row h5.col-2 {
+    color: #ffffff;
+    /* box-shadow: 0px 1px 7px rgb(0 0 0 / 20%); */
+    /* border-radius: 10px; */
+    margin: 0;
+    /* max-width: 12%; */
+    font-size: .85rem;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.tablenav.top .container-fluid .row h4.screen-reader-text {
+    font-size: 1.5rem;
+    color: #06038d;
+}
+
+button#search-submit {
+    background-color: #1d2327;
+    box-shadow: 2px 2px 2px rgba(74, 77, 255, 0.2);
+    color: #ffff;
+    border: 1px solid #fcfcfc00;
+    border-radius: 0 5px 5px 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+button#search-submit:hover, button#search-submit:active {
+    background: #eb1c25;
+    box-shadow: 2px 2px 2px rgba(255, 74, 74, 0.2);
+    color: #ffff;
+    border: 1px solid #fcfcfc00;
+    border-radius: 0 5px 5px 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+input#datepicker-antes {
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #1d2327;
+}
+input#datepicker-despues{
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #1d2327;
+}
+
+input#post-search-input {
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #1d2327;
+    padding-right: 5px;
+}
+
+button#post-query-submit {
+    border-radius: .4rem;
+    width: 120px;
+    padding: 5px;
+    background: #1d2327;
+    box-shadow: 2px 2px 2px rgba(74, 77, 255, 0.2);
+}
+
+button#post-query-submit:hover, button#post-query-submit:active {
+    border-radius: .4rem;
+    width: 120px;
+    padding: 5px;
+    background: #eb1c25;
+    box-shadow: 2px 2px 2px rgba(255, 74, 74, 0.2);
+}
+
+.row select {
+    border: 1px solid #1d2327;
+    border-radius: 5px;
+}
+
+h6 {
+    color:#06038D;
+}
+.tablenav.top i.fas {
+    color: #eb1c25;
+}
+.tablenav.top i.far{
+    color: #eb1c25;
+}
+
+.boton-enviar button#post-query-submit {
+    background: #1d2327;
+    color: #ffffff;
+    border: 1px solid #1d2327;
+    border-radius: 0.25em;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    margin-left: .5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0rem;
+}
+
+.boton-imprimir button#print-query-btn {
+    background: #1d2327;
+    color: #ffffff;
+    border: 1px solid #1d2327;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0rem;
+}
+
+.boton-enviar button#post-query-submit:hover {
+    background-color: #eb1c25;
+    border: 1px solid #eb1c25;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+    color:#ffffff;    
+}
+
+.boton-imprimir button#print-query-btn:hover {
+    background-color: #eb1c25;
+    border: 1px solid #eb1c25;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 5%);
+    color:#ffffff;    
+}
+
+.filtros-pagos {
+    padding-left: 0;
+}
+
+.filtros-pagos select {
+    width: 100%;
+    padding: 0 .5rem;
+}
+
+.row.titulo-principal-co {
+    justify-content: center;
+    text-align: center;
+}
+
+.row.titulo-principal-co span.color {
+    color: #eb1c25;
+}
+.tablenav.top i.fas:hover {
+    color: #f7f7f7;
+}
+
+.tablenav.top .filtros-estados  i.fas:hover, .tablenav.top .filtros-pagos i.fas:hover{
+    color: #06028d;
+}
+
+div#data-clases p.col-1.data-admin {
+    text-align: left;
+    padding: 10px;
+    margin: 0;
+    font-size: .85rem;
+}
+div#data-clases p.col-2.data-admin {
+    text-align: left;
+    padding: 10px;
+    margin: 0;
+    font-size: .85rem;
+}
+.row.seccion-titulos-datos {
+    margin-bottom: 0.5em;
+    background: #1d2327;
+}
+
+.filtros-estados select {
+    margin-bottom: .5rem;
+}
+
+.filtros-estados.col-3.text-center h6 {
+    width: 62%;
+}
+.row.seccion-select-filtros {
+    margin-bottom: 1em;
+}
+
+.datepicker {
+    min-width: 140px;
+}
+
+.datepicker.col-2.text-center {
+    max-width: 10%;
+}
+.filtros-estados.col-3.text-center {
+    max-width: 21%;
+}
+button#search-submit font {
+    font-size: 0.9em;
+}
+/***********************************/
+/********ANTONIO 25-06-2021********/
+/*********************************/
+
+
+/* <div class="cont-preload"><div class="preloader"></div></div> */
+.cont-preload,.cont-preload-acompa{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255 255 255 / 40%);
+    z-index: 100;
+    position: relative;
+    top: 0;
+    height: 500px;
+}
+
+.preloader {
+    content: url(../../../img/ces.ico)!important;
+    width: 100px;
+    height: 100px;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes girar {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+}

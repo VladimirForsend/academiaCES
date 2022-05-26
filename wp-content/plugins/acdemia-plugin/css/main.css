@@ -1,0 +1,79 @@
+#toplevel_page_academia-plugin-academia-page-plugin .wp-menu-image.dashicons-before img {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    height: 20px;
+    width: 20px;
+}
+
+#toplevel_page_academia-plugin-academia-page-plugin div.wp-menu-image {
+    float: left;
+    width: 36px;
+    height: 34px;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wpfooter {
+    display: none;
+}
+
+.toggle.btn.btn-danger ~ img.mb-2:after {
+    content: "\f05e";
+    font-size: 2rem;
+}
+
+.toggle.btn.btn-light.off ~ img.mb-2:after {
+    content: "";
+}
+
+.toggle.btn.btn-danger ~ img.mb-2 {
+    opacity: .8;
+}
+
+.toggle.btn.btn-light.off ~ img.mb-2 {
+    opacity: 1;
+}
+.toggle-off.btn {
+    padding-left: 0.6rem;
+}
+
+.animate-text {
+    position: relative;
+    color: #333;        
+    letter-spacing: 5px;
+    border-bottom: 16px solid #333;
+    line-height: 1.4;
+}
+.animate-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: dodgerblue;
+    border-bottom: 16px solid dodgerblue;
+    animation: lod 2s linear infinite;
+    overflow: hidden;
+}
+@keyframes lod {
+0% {
+    width: 0;
+}
+100% {
+    width: 100%;
+}
+}
