@@ -48,7 +48,7 @@ jQuery(function($) {
                 uri_ajax = url_base + path_dir +'wp-admin/admin-ajax.php';
 
                 data_set = {
-                    action: 'query_contabilidad',
+                    action: 'query_dacademia',
                     fecha_antes : fecha_antes_val ,
                     fecha_despues : fecha_despues_val ,
                     locales : locales_val ,
@@ -105,7 +105,7 @@ jQuery(function($) {
                 uri_ajax = url_base + path_dir +'wp-admin/admin-ajax.php';
 
                 data_set = {
-                    action: 'query_contabilidad_por_dato',
+                    action: 'query_dacademia_por_dato',
                     data_a_buscar : datos_buscador ,
                     filter_by: data_filter,
                 
@@ -142,11 +142,11 @@ jQuery(function($) {
             pago_val = $('[name="filter_shop_order_by_meta_2"]').val(); 
             estado_val = $('[name="filter_shop_order_by_meta_3"]').val(); 
             
-            if( fecha_antes_val =="" ||
+            if( (fecha_antes_val =="" ||
                 fecha_despues_val =="" ||
                 locales_val =="" ||
                 pago_val ==""  ||
-                estado_val =="" ){
+                estado_val =="" ) && false){
                 alert("faltan datos");
             }else{ 
                 setTimeout(function(){                    
@@ -157,7 +157,7 @@ jQuery(function($) {
                 url_base = document.location.origin+ "/";           
                 path_dir  = "";
                 uri_ajax = url_base + path_dir +'wp-admin/admin-ajax.php';
-
+                /*
                 data_set = {
                     action: 'imprimir_excel',
                     fecha_antes : fecha_antes_val ,
@@ -166,6 +166,10 @@ jQuery(function($) {
                     pago : pago_val ,
                     status : estado_val,
                 
+                }
+                */
+                data_set = {
+                    action: 'imprimir_excel'                
                 }
                 console.log(data_set);
                 $.ajax({   
@@ -195,7 +199,7 @@ jQuery(function($) {
 
             data =JSON.parse(data)
             var ws = XLSX.utils.json_to_sheet(data);
-            fileName = "InformePizzaPizza_"+fecha_antes_val+"_hasta_"+fecha_despues_val;
+            fileName = "ReporteAcademia_"+fecha_despues_val ; //fecha_antes_val+"_hasta_"+fecha_despues_val;
             var wb = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(wb, ws, "Reporte");
             
