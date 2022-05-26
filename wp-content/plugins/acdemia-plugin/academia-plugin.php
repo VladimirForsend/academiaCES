@@ -22,18 +22,18 @@ function academia_Add_My_Admin_Link()
         'reporteria', // Title of the page
         'reporteria', // Text to show on the menu link
         'administrator',
-        plugin_dir_path(__FILE__) . '/pizzapizza-page-reporteria.php',
+        plugin_dir_path(__FILE__) . '/academia-page-reporteria.php',
         null,
         plugin_dir_url(__FILE__) . 'img/ces.png',
         20
     );  
     /*
     add_submenu_page( 
-        plugin_dir_path(__FILE__) . '/pizzapizza-page-plugin.php',
+        plugin_dir_path(__FILE__) . '/academia-page-plugin.php',
         'reporteria', //titulo de pagina
         'reporteria', // nombre del submenu
         'administrator', //permisos   
-        plugin_dir_path(__FILE__) . '/pizzapizza-page-reporteria.php' // The 'slug' - file to display when clicking the link    
+        plugin_dir_path(__FILE__) . '/academia-page-reporteria.php' // The 'slug' - file to display when clicking the link    
     ); 
     */
 }
