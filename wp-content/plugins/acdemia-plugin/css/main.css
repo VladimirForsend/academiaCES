@@ -16,7 +16,9 @@
     height: 20px;
     width: 20px;
 }
-
+#toplevel_page_acdemia-plugin-academia-page-plugin img {
+  max-width: 20px;
+}
 #toplevel_page_academia-plugin-academia-page-plugin div.wp-menu-image {
     float: left;
     width: 36px;
