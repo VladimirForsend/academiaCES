@@ -220,7 +220,7 @@
 									<p class="col-1 data-admin text-center">
 										<?php echo $cursos[$i]->rut; ?>
 									</p>
-									<p class="col-1 data-admin"> 
+									<p class="col-1 data-admin text-center overflow-auto"> 
 										<?php echo $cursos[$i]->email; ?>
 									</p>
 									<p class="col-1 data-admin text-center"> 
