@@ -19,14 +19,15 @@ add_action( 'admin_menu', 'academia_Add_My_Admin_Link' );
 function academia_Add_My_Admin_Link()
 {
     add_menu_page(
-        'academia', // Title of the page
-        'academia', // Text to show on the menu link
+        'reporteria', // Title of the page
+        'reporteria', // Text to show on the menu link
         'administrator',
-        plugin_dir_path(__FILE__) . '/academia-page-plugin.php',
+        plugin_dir_path(__FILE__) . '/pizzapizza-page-reporteria.php',
         null,
         plugin_dir_url(__FILE__) . 'img/ces.png',
         20
     );  
+    /*
     add_submenu_page( 
         plugin_dir_path(__FILE__) . '/pizzapizza-page-plugin.php',
         'reporteria', //titulo de pagina
@@ -34,6 +35,7 @@ function academia_Add_My_Admin_Link()
         'administrator', //permisos   
         plugin_dir_path(__FILE__) . '/pizzapizza-page-reporteria.php' // The 'slug' - file to display when clicking the link    
     ); 
+    */
 }
 
 add_action('admin_init', 'call_assets'); 
