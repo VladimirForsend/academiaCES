@@ -2,6 +2,8 @@
 /*
  * AJAX contabilidad
  */
+
+ /*
 add_action('wp_ajax_query_dacademia', 'query_dacademia');
 add_action('wp_ajax_nopriv_query_dacademia', 'query_dacademia');
 
@@ -149,6 +151,7 @@ function query_dacademia() {
 /*
  * AJAX contabilidad por dato buscador
  */
+/*
 add_action('wp_ajax_query_dacademia_por_dato', 'query_dacademia_por_dato');
 add_action('wp_ajax_nopriv_query_dacademia_por_dato', 'query_dacademia_por_dato');
 
@@ -264,67 +267,13 @@ function query_dacademia_por_dato() {
     wp_die();
 }
 
-function traducir_debito($val){
-    $tolow =strtolower($val);
-
-    if($val =="Venta Débito"){
-        return "Débito";
-    }else if($tolow =="sin cuotas"){
-        return "Débito";
-    }else if($val =="" || $val == null){
-        return "";
-    }
-    else{
-        return "Crédito";
-    }
-}
-
-function traducir_estado($val){  
-
-    switch ($val) {
-        case 'auto-draft':
-            $dato = "Eliminado por admin";
-            break;
-        case 'cancelled-local':
-            $dato = "Cancelado por local";
-            break;
-        case 'wc-cancelled':
-            $dato = "Cancelado por webpay";
-            break;
-        case 'wc-cancelled-local':
-            $dato = "Cancelado por local";
-            break;
-        case 'wc-completed':
-            $dato = "Completado";
-            break;
-        case 'wc-failed':
-            $dato = "Fallido";
-            break;
-        case 'wc-pending':
-            $dato = "Pendiente de pago";
-            break;        
-        case 'wc-processing':
-            $dato = "Procesando";
-            break;
-
-        default:
-            $dato = "";
-            break;
-    }
-    return $dato;
-}
-
+*/
 add_action('wp_ajax_imprimir_excel', 'imprimir_excel');
 add_action('wp_ajax_nopriv_imprimir_excel', 'imprimir_excel');
-
 function imprimir_excel() {
-
     global $wpdb;
-
     //$fecha_antes_val = $_POST["fecha_antes"] ." 00:00:00";
-    //$fecha_despues_val = $_POST["fecha_despues"] ." 23:59:59";
-
-    
+    //$fecha_despues_val = $_POST["fecha_despues"] ." 23:59:59";    
     $sql = 'SELECT 
     u.user_login rut,
     u.user_email email,

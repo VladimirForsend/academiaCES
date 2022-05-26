@@ -3,7 +3,7 @@
  
  <?php 		
  // INCLUDE modulo contabilidad
- include_once( get_stylesheet_directory() .'/modulos-forsend/forsend-reporteria/reporteria.php');
+ include_once( get_stylesheet_directory() .'/modulos-forsend/forsend-reporteria/reporteria-ajax.php');
 ?>
 
 </div>

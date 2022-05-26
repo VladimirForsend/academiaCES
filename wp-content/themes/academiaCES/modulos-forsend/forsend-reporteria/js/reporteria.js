@@ -135,7 +135,7 @@ jQuery(function($) {
             }
         });
         $("#print-query-btn").click(function(e) {  
-
+            /*
             fecha_antes_val = $("#datepicker-antes").val();
             fecha_despues_val = $("#datepicker-despues").val();
             locales_val = $('[name="filter_shop_order_by_meta"]').val();
@@ -149,11 +149,13 @@ jQuery(function($) {
                 estado_val =="" ) && false){
                 alert("faltan datos");
             }else{ 
+
+                */
                 setTimeout(function(){                    
                     $("#data-locales").append('<div class="cont-preload"><div class="preloader"></div></div>');
                 }, 1);
                 e.preventDefault();
-                i=0; 
+                
                 url_base = document.location.origin+ "/";           
                 path_dir  = "elearning/";
                 uri_ajax = url_base + path_dir +'wp-admin/admin-ajax.php';
@@ -193,7 +195,7 @@ jQuery(function($) {
                         ExportData(response, fecha_antes_val,fecha_despues_val);     
                     }
                 });    //fin ajax                                                 
-            }
+            /*}*/
         });
         function ExportData(data, fecha_antes_val,fecha_despues_val){            
 
