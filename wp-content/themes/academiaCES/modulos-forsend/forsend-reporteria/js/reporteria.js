@@ -44,7 +44,7 @@ jQuery(function($) {
                 e.preventDefault();
                 i=0; 
                 url_base = document.location.origin+ "/";            
-                path_dir  = "";
+                path_dir  = "elearning/";
                 uri_ajax = url_base + path_dir +'wp-admin/admin-ajax.php';
 
                 data_set = {
@@ -101,7 +101,7 @@ jQuery(function($) {
                 e.preventDefault();
                 i=0; 
                 url_base = document.location.origin+ "/";            
-                path_dir  = "";
+                path_dir  = "elearning/";
                 uri_ajax = url_base + path_dir +'wp-admin/admin-ajax.php';
 
                 data_set = {
@@ -155,7 +155,7 @@ jQuery(function($) {
                 e.preventDefault();
                 i=0; 
                 url_base = document.location.origin+ "/";           
-                path_dir  = "";
+                path_dir  = "elearning/";
                 uri_ajax = url_base + path_dir +'wp-admin/admin-ajax.php';
                 /*
                 data_set = {
