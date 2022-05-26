@@ -20,7 +20,7 @@ function query_dacademia() {
             $all .='"'.$i.'",';
     } 
 
-    $cursos_val = str_replace(array("[","]", '"100"'), array("(",")", $all) , json_encode($_POST["locales"]));
+    $locales_val = str_replace(array("[","]", '"100"'), array("(",")", $all) , json_encode($_POST["locales"]));
  
     $pago_val = $_POST["pago"];
 
@@ -38,7 +38,7 @@ function query_dacademia() {
     
     $where_data = "post_status in $status_in AND post_type='shop_order' AND post_date 
 	between '$fecha_antes_val' AND '$fecha_despues_val' 
-    AND pm14.meta_value in $cursos_val 
+    AND pm14.meta_value in $locales_val 
     AND pm7.meta_value in  $valpago ";
     
     $sql = "SELECT p.ID as n_orden,p.post_date as fecha_emision,pm1.meta_value as nombre, 
@@ -79,52 +79,52 @@ function query_dacademia() {
     LEFT JOIN pp_postmeta pm17 ON (pm17.post_id = p.ID AND pm17.meta_key = '_billing_phone')	
 	WHERE $where_data
 	ORDER BY p.ID desc";
-    $cursos = $wpdb->get_results($sql);
+    $locales = $wpdb->get_results($sql);
 
   	$i = 0;
 
-    if(sizeof($cursos) > 0 ){
+    if(sizeof($locales) > 0 ){
      //   echo  $sql;
-        foreach ($cursos as $key => $value) {
+        foreach ($locales as $key => $value) {
             ?>
                     <div class="row m-0" >	
                         <p class="col-1 data-admin text-center"> 			
-                            <a href="../wp-admin/post.php?post=<?php echo $cursos[$i]->n_orden; ?>&action=edit" target="_blank">
-                                <?php echo $cursos[$i]->n_orden; ?> 
+                            <a href="../wp-admin/post.php?post=<?php echo $locales[$i]->n_orden; ?>&action=edit" target="_blank">
+                                <?php echo $locales[$i]->n_orden; ?> 
                             </a>
                         </p>
                         <p class="col-1 data-admin"> 
-                            <?php echo $cursos[$i]->nombre; ?>
+                            <?php echo $locales[$i]->nombre; ?>
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo $cursos[$i]->nombre_local; ?>
+                            <?php echo $locales[$i]->nombre_local; ?>
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo $cursos[$i]->fecha_emision; ?>
+                            <?php echo $locales[$i]->fecha_emision; ?>
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo $cursos[$i]->Total_pedido; ?>
+                            <?php echo $locales[$i]->Total_pedido; ?>
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo $cursos[$i]->forma_de_pago; ?>								
+                            <?php echo $locales[$i]->forma_de_pago; ?>								
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo traducir_debito($cursos[$i]->tarjeta_pago); ?>									
+                            <?php echo traducir_debito($locales[$i]->tarjeta_pago); ?>									
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo $cursos[$i]->authorizationCode; ?>
+                            <?php echo $locales[$i]->authorizationCode; ?>
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo $cursos[$i]->cardNumber; ?>
+                            <?php echo $locales[$i]->cardNumber; ?>
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo traducir_estado($cursos[$i]->estado ); ?>
+                            <?php echo traducir_estado($locales[$i]->estado ); ?>
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo $cursos[$i]->fono; ?>
+                            <?php echo $locales[$i]->fono; ?>
                         </p>
                         <p class="col-1 data-admin text-center"> 
-                            <?php echo $cursos[$i]->email; ?>
+                            <?php echo $locales[$i]->email; ?>
                         </p>
                     </div>
            
@@ -199,52 +199,52 @@ function query_dacademia_por_dato() {
     LEFT JOIN pp_postmeta pm17 ON (pm17.post_id = p.ID AND pm17.meta_key = '_billing_phone')	
 	WHERE $where_data
 	ORDER BY p.ID desc";
-    $cursos = $wpdb->get_results($sql);
+    $locales = $wpdb->get_results($sql);
 
   	$i = 0;
 
-    if(sizeof($cursos) > 0 ){
+    if(sizeof($locales) > 0 ){
    
-        foreach ($cursos as $key => $value) {
+        foreach ($locales as $key => $value) {
             ?> 
             <div class="row m-0" >				
                     <p class="col-1 data-admin text-center"> 
-                        <a href="../wp-admin/post.php?post=<?php echo $cursos[$i]->n_orden; ?>&action=edit" target="_blank">
-                            <?php echo $cursos[$i]->n_orden; ?> 
+                        <a href="../wp-admin/post.php?post=<?php echo $locales[$i]->n_orden; ?>&action=edit" target="_blank">
+                            <?php echo $locales[$i]->n_orden; ?> 
                         </a>
                     </p>
                     <p class="col-1 data-admin"> 
-                        <?php echo $cursos[$i]->nombre; ?>
+                        <?php echo $locales[$i]->nombre; ?>
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo $cursos[$i]->nombre_local; ?>
+                        <?php echo $locales[$i]->nombre_local; ?>
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo $cursos[$i]->fecha_emision; ?>
+                        <?php echo $locales[$i]->fecha_emision; ?>
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo $cursos[$i]->Total_pedido; ?>
+                        <?php echo $locales[$i]->Total_pedido; ?>
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo $cursos[$i]->forma_de_pago; ?>								
+                        <?php echo $locales[$i]->forma_de_pago; ?>								
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo traducir_debito($cursos[$i]->tarjeta_pago); ?>								
+                        <?php echo traducir_debito($locales[$i]->tarjeta_pago); ?>								
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo $cursos[$i]->authorizationCode; ?>
+                        <?php echo $locales[$i]->authorizationCode; ?>
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo $cursos[$i]->cardNumber; ?>
+                        <?php echo $locales[$i]->cardNumber; ?>
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo traducir_estado($cursos[$i]->estado ); ?>
+                        <?php echo traducir_estado($locales[$i]->estado ); ?>
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo $cursos[$i]->fono; ?>
+                        <?php echo $locales[$i]->fono; ?>
                     </p>
                     <p class="col-1 data-admin text-center"> 
-                        <?php echo $cursos[$i]->email; ?>
+                        <?php echo $locales[$i]->email; ?>
                     </p>
                 </div>     
            
@@ -321,8 +321,8 @@ function imprimir_excel() {
 
     global $wpdb;
 
-    $fecha_antes_val = $_POST["fecha_antes"] ." 00:00:00";
-    $fecha_despues_val = $_POST["fecha_despues"] ." 23:59:59";
+    //$fecha_antes_val = $_POST["fecha_antes"] ." 00:00:00";
+    //$fecha_despues_val = $_POST["fecha_despues"] ." 23:59:59";
 
     
     $sql = 'SELECT 
@@ -344,16 +344,9 @@ function imprimir_excel() {
     left join wp_posts p1 on p1.ID = i.item_id 
     where not p1.ID ="null"
     order by email';
-    $cursos = $wpdb->get_results($sql);  
+    $locales = $wpdb->get_results($sql); 
 
-    //Set header information to export data in excel format   
-
-    //Set variable to false for heading
-    $heading = false;
-    $i=0;
- 
-   
-    echo json_encode($cursos);
+    echo json_encode($locales);
     wp_die();    
     exit(); 
     
