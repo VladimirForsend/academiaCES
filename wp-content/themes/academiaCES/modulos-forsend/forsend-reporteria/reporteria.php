@@ -230,7 +230,7 @@
 										<?php echo $cursos[$i]->apellido; ?>
 									</p>
 									<p class="col-1 data-admin text-center"> 
-										$<?php echo $cursos[$i]->celular; ?>
+										<?php echo $cursos[$i]->celular; ?>
 									</p>
 									<p class="col-1 data-admin text-center"> 
 										<?php echo $cursos[$i]->nivel; ?>								
