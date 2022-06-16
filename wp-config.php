@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'f0rs3nda_elearning' );
+define( 'DB_NAME', 'academiaCES' );
 
 /** MySQL database username */
 define( 'DB_USER', 'f0rs3nda_elearning' );
