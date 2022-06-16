@@ -1,5 +1,5 @@
 #carruselSuperior {
-    height: 65vh;
+    height: 25vh;
     overflow: hidden;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .bg-fondo-img-slider {
-    height: 75vh;
+    height: 25vh;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: top left;
