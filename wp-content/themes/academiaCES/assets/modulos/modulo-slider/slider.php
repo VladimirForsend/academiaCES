@@ -27,8 +27,11 @@
                                                                 echo "active";
                                                             }; ?>" style="background-color:<?php the_field('color_de_fondo'); ?>">
                     <div class="row">
+
+                        <div class="bg-fondo-img-slider col-md-7 d-flex justify-content-center align-items-center flex-column" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>" alt="<?php echo get_the_excerpt(); ?>');"></div>
+
                         <div class="col-md-5 slider-text-zindex d-flex justify-content-center align-items-center flex-column">
-                            <h2 style="visibility: hidden;" class="text-white titulo-carrusel-craed text-center"><?php echo get_the_title(); ?></h2>
+                            <h2 style="visibility: hidden;" class="text-white text-center"><?php echo get_the_title(); ?></h2>
                             <p class="parrafo-slider" style="background-color:<?php the_field(' color_de_del_texto'); ?>">
                                 <?php
                                 $image = get_field('logo_ces');
@@ -42,15 +45,14 @@
                                 <span class="texto-small">
                                     <?php the_field('parrafo_slider'); ?>
                                 </span>
-                            </p> 
-                            <div class="row contenedor-botones-slider">
-                            <a class="boton-negro" href="<?php the_field('link_boton1'); ?>"><?php the_field('texto_boton'); ?></a>
-                            <a class="boton-negro" href="<?php the_field('link_boton2'); ?>"><?php the_field('texto_boton2'); ?></a>
-                            <a class="boton-negro" href="<?php the_field('link_boton3'); ?>"><?php the_field('texto_boton3'); ?></a>
+                            </p>
+                            <div class="row contenedor-botones-slider flex-column">
+                                <a class="boton-negro" href="<?php the_field('link_boton1'); ?>"><?php the_field('texto_boton'); ?></a>
+                                <a class="boton-negro" href="<?php the_field('link_boton2'); ?>"><?php the_field('texto_boton2'); ?></a>
+                                <a class="boton-negro" href="<?php the_field('link_boton3'); ?>"><?php the_field('texto_boton3'); ?></a>
+                            </div>
                         </div>
-                        </div>
-                        <div class="bg-fondo-img-slider col-md-7 d-flex justify-content-center align-items-center flex-column" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>" alt="<?php echo get_the_excerpt(); ?>');"></div>
-                       
+
 
                         <?php $i++; ?>
                     </div>
