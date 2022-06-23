@@ -21,6 +21,13 @@
 			'order' => 'DESC',
 			'paged' => $paged,
 			'posts_per_page' => $post_per_page,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'course_category',
+					'field'    => 'slug',
+					'terms'    => 'electricidad',
+				),
+			),
 		);
 		$wp_query = new WP_Query($args);
 		if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
