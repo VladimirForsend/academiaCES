@@ -15,15 +15,21 @@
 				$e = 0;
 				$temp = $wp_query;
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-				$post_per_page = 8; // -1 shows all posts
+				$post_per_page = 4; // -1 shows all posts
 				$args = array(
 					'post_type' => 'lp_course',
-					'orderby' => 'date',
+					'orderby' => 'rand',
 					'order' => 'DESC',
 					'paged' => $paged,
 					'posts_per_page' => $post_per_page,
-					
-				); 
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'course_category',
+							'field'    => 'slug',
+							'terms'    => 'destacados',
+						),
+					),
+				);
 				$wp_query = new WP_Query($args);
 				if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
