@@ -23,7 +23,7 @@
 					'paged' => $paged,
 					'posts_per_page' => $post_per_page,
 					
-				);
+				); 
 				$wp_query = new WP_Query($args);
 				if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
