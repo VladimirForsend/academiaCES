@@ -34,12 +34,7 @@
 			if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
 					<div class="col-12 col-md-3">
-						<!-- contador -->
-						<div class="tiempo">
-							<div id="hiddendate" class="d-none"><?php the_field('contador_fecha'); ?></div>
-							<div id="demo"></div>
-						</div>
-						<!-- contador -->
+						
 						<figure class="background-white tarjetas-craed hover card">
 							<div class="bg-fondo-img" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>')">
 								<?php $terms = get_terms('course_category');
@@ -61,6 +56,12 @@
 
 							</div>
 							<figcaption class="p-2 caja-texto">
+								<!-- contador -->
+						<div class="tiempo">
+							<div id="hiddendate" class="d-none"><?php the_field('contador_fecha'); ?></div>
+							<div id="demo"></div>
+						</div>
+						<!-- contador -->
 								<h5 class="font-weight-bold"><?php echo get_the_title(); ?></h5>
 
 
