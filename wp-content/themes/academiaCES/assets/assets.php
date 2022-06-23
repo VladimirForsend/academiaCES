@@ -66,12 +66,13 @@ function titans_script()
         wp_register_script('parallax', get_bloginfo('template_directory') . '/assets/librerias/js/parallax.js', array('jquery'), '1', false);
         wp_register_script('popover', get_bloginfo('template_directory') . '/assets/librerias/js/popper.min.js', array('jquery'), '2', true);
         wp_register_script('titanes-js', get_bloginfo('template_directory') . '/assets/librerias/js/titanes.js', array('jquery'), '1', true);
-
+        wp_register_script('contador-js', get_bloginfo('template_directory') . '/assets/librerias/js/contador.js', array('jquery'), '1', true);
         /*encolamos los JS*/
         wp_enqueue_script('titanes-js', array('jquery'), true);
         wp_enqueue_script('popover', array('jquery'), true);
         wp_enqueue_script('bootstrap-js', array('jquery'), true);
-
+        wp_enqueue_script('contador-js', array('jquery'), true);
+        
         wp_enqueue_script('parallax');
         wp_enqueue_script('slider-logos');
     }
