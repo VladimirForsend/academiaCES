@@ -1,7 +1,9 @@
 <style>
 	<?php include get_template_directory() . '/assets/modulos/modulo-featured/featured.css'; ?>
 </style>
-
+<script>
+    <?php include get_template_directory() . '/assets/modulos/modulo-featured/contador.js'; ?>
+</script>
 <!--Slider-->
 
 <div id="post-recientes" class="container-fluid bg-casa bg-white">
