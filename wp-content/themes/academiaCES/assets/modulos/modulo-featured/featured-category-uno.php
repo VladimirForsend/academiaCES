@@ -58,12 +58,12 @@
 
 							</div>
 							<figcaption class="p-2 caja-texto">
-								<!-- contador -->
+								<!-- contador 
 						<div class="tiempo">
 							<div id="hiddendate" class="d-none"><?php the_field('contador_fecha'); ?></div>
 							<div id="demo"></div>
 						</div>
-						<!-- contador -->
+					contador -->
 								<h5 class="font-weight-bold"><?php echo get_the_title(); ?></h5>
 
 
