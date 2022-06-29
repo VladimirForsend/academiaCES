@@ -341,3 +341,7 @@ body .lp-quiz-buttons .form-button-finish-course {
     height: 70px;
     text-align: center;
 }
+
+.caja-parrafo-tarjeta {
+    height: 50px;
+}
