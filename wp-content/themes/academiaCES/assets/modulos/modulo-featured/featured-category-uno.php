@@ -64,7 +64,7 @@
 							<div id="demo"></div>
 						</div>
 					contador -->
-								<h5 class="font-weight-bold"><?php echo get_the_title(); ?></h5>
+								<h5 class="font-weight-bold titulo-loop-tarjetas"><?php echo get_the_title(); ?></h5>
 
 
 								<a class="autor-curso d-none" href="<?php echo get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename')); ?>"><?php the_author(); ?></a>

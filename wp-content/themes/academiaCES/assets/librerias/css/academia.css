@@ -332,3 +332,10 @@ body .lp-quiz-buttons .form-button-finish-course {
 .learn-press-breadcrumb {
     margin: 1rem auto 1rem auto!important;
 }
+
+
+/*titulos tarjetas*/
+
+.titulo-loop-tarjetas {
+    font-size: 1rem;
+}
