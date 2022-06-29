@@ -17,7 +17,7 @@
 			$e = 0;
 			$temp = $wp_query;
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			$post_per_page = 4; // -1 shows all posts
+			$post_per_page = 15; // -1 shows all posts
 			$args = array(
 				'post_type' => 'lp_course',
 				'orderby' => 'rand',
