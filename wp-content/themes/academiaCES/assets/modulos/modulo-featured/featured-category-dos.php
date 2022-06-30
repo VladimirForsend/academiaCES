@@ -53,7 +53,7 @@ echo '<li><a href="' . esc_url($term_link) . '">' . $term->name . '</a></li>, ';
 							<h5 class="font-weight-bold titulo-loop-tarjetas"><?php echo get_the_title(); ?></h5>
 							
 	
-                            <a class="autor-curso" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a>
+                            <!--<a class="autor-curso" href="<?php// echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a>-->
 							<p class="mt-3 caja-parrafo-tarjeta"><?php echo get_the_excerpt(); ?></p>
 							<a class="boton-amarillo" href="<?php echo get_the_permalink(); ?>"> Ir al curso</a>
 						</figcaption>
