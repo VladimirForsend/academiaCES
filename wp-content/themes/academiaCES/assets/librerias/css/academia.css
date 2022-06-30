@@ -345,3 +345,7 @@ body .lp-quiz-buttons .form-button-finish-course {
 .caja-parrafo-tarjeta {
     height: 50px;
 }
+
+.meta-item.meta-item-instructor {
+    display: none !important;
+}

@@ -24,7 +24,7 @@
 				array(
 					'taxonomy' => 'course_category',
 					'field'    => 'slug',
-					'terms'    => 'electricidad',
+					'terms'    => 'vod',
 				),
 			),
 		); 
