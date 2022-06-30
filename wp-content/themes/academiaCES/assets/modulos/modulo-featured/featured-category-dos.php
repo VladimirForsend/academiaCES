@@ -31,6 +31,28 @@
 		$wp_query = new WP_Query($args);
 		if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
+<div class="learn-press-profile-dashboard">
+
+	<?php
+	/**
+	 * Before dashboard
+	 */
+	do_action( 'learn-press/profile/before-dashboard' );
+
+	/**
+	 * Dashboard summary
+	 */
+	do_action( 'learn-press/profile/dashboard-summary' );
+
+	/**
+	 * After dashboard
+	 */
+	do_action( 'learn-press/profile/after-dashboard' );
+
+	?>
+
+</div>
+
 				<div class="col-12 col-md-4">
 
 					<figure class="background-white tarjetas-craed hover card">
