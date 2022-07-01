@@ -7,33 +7,7 @@
 <div id="post-recientes" class="container">
 	<h3 class="titulo-academia mt-3 mb-3"><?php the_field('titulos_academia_dos');?></h3>
 	<div class="row">
-	<?php
-		if ( $query->have_posts() ) :
-			/**
-			 * LP Hook
-			 */
-			do_action( 'learn-press/shortcode/before-courses-loop' );
 
-			LP()->template( 'course' )->begin_courses_loop();
-
-			while ( $query->have_posts() ) :
-				$query->the_post();
-
-				learn_press_get_template_part( 'content', 'course' );
-
-			endwhile;
-
-			LP()->template( 'course' )->end_courses_loop();
-
-			/**
-			 * LP Hook
-			 */
-			do_action( 'learn-press/shortcode/after-main-content' );
-			wp_reset_postdata();
-		else :
-			_e( 'No courses', 'learnpress' );
-		endif;
-		?>
 		<?php
 		$i = 0;
 		$e = 0; 
