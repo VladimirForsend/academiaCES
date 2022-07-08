@@ -34,12 +34,13 @@
 			);
 			$wp_query = new WP_Query($args);
 			if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-<?php echo $course_item->get_permalink(); ?>
+
 					<div class="col-12 col-md-3">
-						
+					
 						<figure class="background-white tarjetas-craed hover card">
 							<div class="bg-fondo-img" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>')">
-								<?php $terms = get_terms('course_category');
+					
+					<?php $terms = get_terms('course_category');
 								echo '<ul class="tag-tarjeta">';
 								foreach ($terms as $term) {
 
@@ -54,22 +55,33 @@
 									// We successfully got a link. Print it out.
 									echo '<li><a href="' . esc_url($term_link) . '">' . $term->name . '</a></li>, ';
 								}
-								echo '</ul>'; ?>
+								echo '</ul>';
+								
+								
+								?>
+
 
 							</div>
 							<figcaption class="p-2 caja-texto">
-								<!-- contador 
-						<div class="tiempo">
-							<div id="hiddendate" class="d-none"><?php the_field('contador_fecha'); ?></div>
-							<div id="demo"></div>
-						</div>
-					contador -->
-								<h5 class="font-weight-bold titulo-loop-tarjetas"><?php echo get_the_title(); ?></h5>
+							<p>	<span>Hora de inicio curso:<?php the_field('hora_inicio_curso');?></span>
+							</br>
+							<span>Inicio el:<?php the_field('fecha_fin_del_curso');?></span>
+							</br>
+							<span>Finaliza el:<?php the_field('fecha_fin_del_curso');?></span>
+							</br>
+							<span>Disponibilidad del VOD:<?php the_field('fecha_vod');?></span>
+							
+							
+							</p>
+														
+							<h5 class="font-weight-bold titulo-loop-tarjetas"><?php echo get_the_title(); ?></h5>
 
 
 								<a class="autor-curso d-none" href="<?php echo get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename')); ?>"><?php the_author(); ?></a>
 								<p class="mt-3 caja-parrafo-tarjeta"><?php echo get_the_excerpt(); ?></p>
 								<a class="boton-amarillo" href="<?php echo get_the_permalink(); ?>"> Ir al curso</a>
+							
+								
 							</figcaption>
 
 
@@ -93,3 +105,7 @@
 
 	</div>
 </div>
+
+
+
+

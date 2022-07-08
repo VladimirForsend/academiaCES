@@ -338,14 +338,23 @@ body .lp-quiz-buttons .form-button-finish-course {
 
 .titulo-loop-tarjetas {
     font-size: .9rem;
-    height: 50px;
+    min-height: 50px;
+    max-height: 80px;
     text-align: center;
 }
 
 .caja-parrafo-tarjeta {
-    height: 50px;
+    height: auto;
+    max-height: 300px;
 }
 
 .meta-item.meta-item-instructor {
     display: none !important;
+}
+
+
+/*sincle lesson*/
+
+#popup-course #popup-content #learn-press-content-item .content-item-wrap {
+    width: 90vw!important;
 }
