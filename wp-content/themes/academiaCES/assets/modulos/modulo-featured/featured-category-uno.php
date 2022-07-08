@@ -34,7 +34,7 @@
 			);
 			$wp_query = new WP_Query($args);
 			if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-
+<?php echo $course_item->get_permalink(); ?>
 					<div class="col-12 col-md-3">
 						
 						<figure class="background-white tarjetas-craed hover card">
@@ -55,7 +55,7 @@
 									echo '<li><a href="' . esc_url($term_link) . '">' . $term->name . '</a></li>, ';
 								}
 								echo '</ul>'; ?>
-<?php echo $course_item->get_permalink(); ?>
+
 							</div>
 							<figcaption class="p-2 caja-texto">
 								<!-- contador 
