@@ -1,9 +1,7 @@
 <style>
 	<?php include get_template_directory() . '/assets/modulos/modulo-featured/featured.css'; ?>
 </style>
-<script>
-    <?php include get_template_directory() . '/assets/modulos/modulo-featured/contador.js'; ?>
-</script>
+
 <!--Slider-->
 
 <div id="post-recientes" class="container-fluid bg-casa bg-white">
@@ -36,11 +34,11 @@
 			if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
 					<div class="col-12 col-md-3">
-					
+
 						<figure class="background-white tarjetas-craed hover card">
 							<div class="bg-fondo-img" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>')">
-					
-					<?php $terms = get_terms('course_category');
+
+								<?php $terms = get_terms('course_category');
 								echo '<ul class="tag-tarjeta">';
 								foreach ($terms as $term) {
 
@@ -56,33 +54,31 @@
 									echo '<li><a href="' . esc_url($term_link) . '">' . $term->name . '</a></li>, ';
 								}
 								echo '</ul>';
-								
-								
+
+
 								?>
 
 
 							</div>
 							<figcaption class="p-2 caja-texto">
-							<p class="date-time-ces">	
-							<span class="item-date-time-ces">Hora de inicio curso:<?php the_field('hora_inicio_curso');?></span>
-							</br>
-							<span class="item-date-time-ces">Inicio el:<?php the_field('fecha_fin_del_curso');?></span>
-							</br>
-							<span class="item-date-time-ces">Finaliza el:<?php the_field('fecha_fin_del_curso');?></span>
-							</br>
-							<span class="item-date-time-ces">Disponibilidad del VOD:<?php the_field('fecha_vod');?></span>
-							
-							
-							</p>
-														
-							<h5 class="font-weight-bold titulo-loop-tarjetas"><?php echo get_the_title(); ?></h5>
+								<h5 class="font-weight-bold titulo-loop-tarjetas"><?php echo get_the_title(); ?></h5>
+								<p class="date-time-ces">
+									<span class="item-date-time-ces">Hora de inicio curso:<?php the_field('hora_inicio_curso'); ?></span>
+									</br>
+									<span class="item-date-time-ces">Inicio el:<?php the_field('fecha_fin_del_curso'); ?></span>
+									</br>
+									<span class="item-date-time-ces">Finaliza el:<?php the_field('fecha_fin_del_curso'); ?></span>
+									</br>
+									<span class="item-date-time-ces">Disponibilidad del VOD:<?php the_field('fecha_vod'); ?></span>
 
+
+								</p>
 
 								<a class="autor-curso d-none" href="<?php echo get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename')); ?>"><?php the_author(); ?></a>
 								<p class="mt-3 caja-parrafo-tarjeta"><?php echo get_the_excerpt(); ?></p>
 								<a class="boton-amarillo" href="<?php echo get_the_permalink(); ?>"> Ir al curso</a>
-							
-								
+
+
 							</figcaption>
 
 
@@ -106,7 +102,3 @@
 
 	</div>
 </div>
-
-
-
-
