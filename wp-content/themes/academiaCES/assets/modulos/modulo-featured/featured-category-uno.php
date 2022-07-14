@@ -63,13 +63,14 @@
 
 							</div>
 							<figcaption class="p-2 caja-texto">
-							<p>	<span>Hora de inicio curso:<?php the_field('hora_inicio_curso');?></span>
+							<p class="date-time-ces">	
+							<span class="item-date-time-ces">Hora de inicio curso:<?php the_field('hora_inicio_curso');?></span>
 							</br>
-							<span>Inicio el:<?php the_field('fecha_fin_del_curso');?></span>
+							<span class="item-date-time-ces">Inicio el:<?php the_field('fecha_fin_del_curso');?></span>
 							</br>
-							<span>Finaliza el:<?php the_field('fecha_fin_del_curso');?></span>
+							<span class="item-date-time-ces">Finaliza el:<?php the_field('fecha_fin_del_curso');?></span>
 							</br>
-							<span>Disponibilidad del VOD:<?php the_field('fecha_vod');?></span>
+							<span class="item-date-time-ces">Disponibilidad del VOD:<?php the_field('fecha_vod');?></span>
 							
 							
 							</p>
