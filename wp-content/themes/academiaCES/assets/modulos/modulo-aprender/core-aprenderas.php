@@ -4,7 +4,7 @@
 function Aprenderas_register() {
 
     $labels = array(
-        'name' => _x('Aprenderas', 'post type general name'),
+        'name' => _x('aprender', 'post type general name'),
         'singular_name' => _x('Aprenderas', 'post type singular name'),
         'add_new' => _x('Agregar nuevo', 'Aprenderas item'),
         'add_new_item' => __('Agregar nuevo Aprenderas'),
