@@ -363,3 +363,8 @@ body .lp-quiz-buttons .form-button-finish-course {
     width: 100%;
     height: 65vh;
 }
+
+.align-middle.av-preview-container {
+    width: 100%!important;
+    height: 300px!important;
+}
