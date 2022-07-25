@@ -11,10 +11,6 @@
 
 defined( 'ABSPATH' ) || exit();
 
-if ( ! isset( $question ) || ! isset( $answer ) ) {
-	return;
-}
-
 $unique_key = uniqid();
 ?>
 
@@ -28,7 +24,7 @@ $unique_key = uniqid();
 
 		<div class="course-faqs-box__content">
 			<div class="course-faqs-box__content-inner">
-				<?php echo wp_kses_post( $answer ); ?>
+				<?php echo $answer; ?>
 			</div>
 		</div>
 	</div>

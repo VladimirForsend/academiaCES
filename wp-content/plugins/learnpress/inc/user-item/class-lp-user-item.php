@@ -414,11 +414,6 @@ class LP_User_Item extends LP_Abstract_Object_Data implements ArrayAccess {
 		$got_status = '';
 
 		try {
-			// User is Guest
-			if ( (int) $this->get_user_id() === 0 ) {
-				throw new Exception( __( 'User is guest', 'learnpress' ) );
-			}
-
 			$lp_user_item = LP_User_Items_DB::getInstance();
 			$filter       = new LP_User_Items_Filter();
 
@@ -435,7 +430,7 @@ class LP_User_Item extends LP_Abstract_Object_Data implements ArrayAccess {
 
 			$this->set_data( $field, $got_status );
 		} catch ( Throwable $e ) {
-			LP_Debug::error_log( __FUNCTION__ . ':' . $e->getMessage() );
+			error_log( __FUNCTION__ . ':' . $e->getMessage() );
 		}
 
 		return $got_status;

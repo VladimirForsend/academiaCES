@@ -485,14 +485,10 @@ class LP_User_Item_Quiz extends LP_User_Item {
 
 		try {
 			if ( LP_ITEM_COMPLETED === $this->get_status() ) {
-				$result_tmp = LP_User_Items_Result_DB::instance()->get_result( $this->get_user_item_id() );
+				$result = LP_User_Items_Result_DB::instance()->get_result( $this->get_user_item_id() );
 
-				if ( $result_tmp ) {
-					if ( isset( $result_tmp['user_mark'] ) && $result_tmp['user_mark'] < 0 ) {
-						$result_tmp['user_mark'] = 0;
-					}
-
-					$result = $result_tmp;
+				if ( isset( $result['user_mark'] ) && $result['user_mark'] < 0 ) {
+					$result['user_mark'] = 0;
 				}
 
 				return $result;
@@ -509,7 +505,6 @@ class LP_User_Item_Quiz extends LP_User_Item {
 			$result['question_count'] = count( $question_ids );
 			$result['time_spend']     = $this->get_time_interval( 'display' );
 			$result['passing_grade']  = $quiz->get_passing_grade();
-			$checked_questions        = $this->get_checked_questions();
 
 			foreach ( $question_ids as $question_id ) {
 				$question = LP_Question::get_question( $question_id );
@@ -552,12 +547,11 @@ class LP_User_Item_Quiz extends LP_User_Item {
 
 				$can_review_quiz = get_post_meta( $quiz->get_id(), '_lp_review', true ) === 'yes';
 				if ( $can_review_quiz && ! array_key_exists( 'instant_check', $answered ) ) {
-
 					$result['questions'][ $question_id ]['explanation'] = $question->get_explanation();
 					$result['questions'][ $question_id ]['options']     = learn_press_get_question_options_for_js(
 						$question,
 						array(
-							'include_is_true' => in_array( $question_id, $checked_questions ) || get_post_meta( $quiz->get_id(), '_lp_show_correct_review', true ) === 'yes',
+							'include_is_true' => get_post_meta( $quiz->get_id(), '_lp_show_correct_review', true ) === 'yes',
 							'answer'          => $answered[ $question_id ] ?? '',
 						)
 					);
@@ -918,10 +912,28 @@ class LP_User_Item_Quiz extends LP_User_Item {
 		return apply_filters( 'learn-press/user-quiz/can-hint-answer', true, $this->get_id(), $this->get_course_id() );
 	}
 
+	/*
+	public function complete( $status = 'completed' ) {
+		parent::complete( $status );
+
+		$this->update();
+	}*/
+
 	/**
-	 * @return bool
+	 * @deprecated
+	 *
+	 * @editor tungnx
+	 * @modify 4.1.4.1 - comment - not use
 	 */
-	public function is_review_questions(): bool {
+	/*
+	public function finish() {
+		$this->complete( 'completed' );
+
+		// Force to re-calculate quiz results and update cache.
+		$r = $this->get_results( '', true );
+	}*/
+
+	public function is_review_questions() {
 		return LP_Global::quiz_question() && ( $this->get_status() === 'completed' );
 	}
 }

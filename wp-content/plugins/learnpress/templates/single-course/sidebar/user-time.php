@@ -16,8 +16,8 @@ defined( 'ABSPATH' ) || exit;
  * @var LP_Datetime $expiration_time
  */
 $time   = current_time( 'mysql', true );
-$user   = learn_press_get_current_user();
-$course = learn_press_get_course();
+$user   = LP_Global::user();
+$course = LP_Global::course();
 ?>
 
 <div class="course-time">

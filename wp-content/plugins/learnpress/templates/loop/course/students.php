@@ -15,14 +15,11 @@
  */
 defined( 'ABSPATH' ) || exit();
 
-$course = learn_press_get_course();
-if ( ! $course ) {
-	return;
-}
+$course = LP_Global::course();
 ?>
 
 <span class="course-students">
 
-	<?php echo esc_html( $course->get_users_enrolled() ); ?>
+	<?php echo $course->get_users_enrolled(); ?>
 
 </span>

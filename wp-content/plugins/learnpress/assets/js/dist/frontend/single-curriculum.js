@@ -10,6 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_lp_modal_overlay__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/lp-modal-overlay */ "./assets/src/apps/js/utils/lp-modal-overlay.js");
+const $ = jQuery;
 
 const lpModalOverlayCompleteItem = {
   elBtnFinishCourse: null,
@@ -606,8 +607,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function courseCurriculumSkeleton() {
-  let courseID = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-
   const Sekeleton = () => {
     const elementCurriculum = document.querySelector('.learnpress-course-curriculum');
 
@@ -627,7 +626,7 @@ function courseCurriculumSkeleton() {
       const page = 1;
       const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default()({
         path: (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_0__.addQueryArgs)('lp/v1/lazy-load/course-curriculum', {
-          courseId: courseID || lpGlobalSettings.post_id || '',
+          courseId: lpGlobalSettings.post_id || '',
           page,
           sectionID: sectionID || ''
         }),
@@ -636,21 +635,15 @@ function courseCurriculumSkeleton() {
       const {
         data,
         status,
-        message
+        message,
+        section_ids
       } = response;
-      let section_ids = data.section_ids;
 
       if (status === 'error') {
         throw new Error(message || 'Error');
       }
 
-      let returnData = data.content;
-
-      if (undefined === returnData) {
-        // For old Eduma <= 4.6.0
-        returnData = data;
-        section_ids = response.section_ids;
-      }
+      const returnData = data;
 
       if (sectionID) {
         if (section_ids && !section_ids.includes(sectionID)) {
@@ -732,14 +725,13 @@ function courseCurriculumSkeleton() {
         const {
           data3,
           pages3,
-          paged3,
-          page
+          paged3
         } = responseItem;
 
-        if (pages3 <= paged3 || pages3 <= page) {
+        if (pages3 <= paged3) {
           itemLoadMore.remove();
         } else {
-          itemLoadMore.dataset.page = page;
+          itemLoadMore.dataset.page = paged3;
         }
 
         if (data3 && sectionContent) {
@@ -762,26 +754,14 @@ function courseCurriculumSkeleton() {
     });
     const {
       data,
-      status,
       pages,
-      message
+      status,
+      message,
+      item_ids
     } = response;
-    const {
-      page
-    } = data;
-    let item_ids;
 
     if (status === 'success') {
-      let dataTmp = data.content;
-      item_ids = data.item_ids;
-
-      if (undefined === dataTmp) {
-        // For old Eduma <= 4.6.0
-        dataTmp = data;
-        item_ids = response.item_ids;
-      }
-
-      returnData += dataTmp;
+      returnData += data;
 
       if (sectionID && item_ids && itemID && !item_ids.includes(itemID)) {
         return getResponsiveItem(returnData, paged + 1, sectionID, itemID);
@@ -790,17 +770,17 @@ function courseCurriculumSkeleton() {
 
     return {
       data3: returnData,
-      pages3: pages || data.pages,
+      pages3: pages,
+      paged3: paged,
       status3: status,
-      message3: message,
-      page: page || 0
+      message3: message
     };
   };
 
   const getResponsive = async (returnData, page, sectionID) => {
     const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default()({
       path: (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_0__.addQueryArgs)('lp/v1/lazy-load/course-curriculum', {
-        courseId: courseID || lpGlobalSettings.post_id || '',
+        courseId: lpGlobalSettings.post_id || '',
         page,
         sectionID: sectionID || '',
         loadMore: true
@@ -809,22 +789,14 @@ function courseCurriculumSkeleton() {
     });
     const {
       data,
+      pages,
       status,
-      message
+      message,
+      section_ids
     } = response;
-    let returnDataTmp = data.content;
-    let section_ids = data.section_ids;
-    let pages = data.pages;
-
-    if (undefined === returnDataTmp) {
-      // For old Eduma <= 4.6.0
-      returnDataTmp = data;
-      section_ids = response.section_ids;
-      pages = response.pages;
-    }
 
     if (status === 'success') {
-      returnData += returnDataTmp;
+      returnData += data;
 
       if (sectionID && section_ids && section_ids.length > 0 && !section_ids.includes(sectionID)) {
         return getResponsive(returnData, page + 1, sectionID);
@@ -833,7 +805,7 @@ function courseCurriculumSkeleton() {
 
     return {
       data2: returnData,
-      pages2: pages || data.pages,
+      pages2: pages,
       page2: page,
       status2: status,
       message2: message
@@ -1125,6 +1097,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _show_lp_overlay_complete_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./show-lp-overlay-complete-item */ "./assets/src/apps/js/frontend/show-lp-overlay-complete-item.js");
 /* harmony import */ var _single_curriculum_skeleton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./single-curriculum/skeleton */ "./assets/src/apps/js/frontend/single-curriculum/skeleton.js");
 
+const $ = jQuery;
 
 
 

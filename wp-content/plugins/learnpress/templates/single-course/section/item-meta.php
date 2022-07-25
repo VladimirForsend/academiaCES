@@ -15,12 +15,8 @@ if ( ! isset( $item ) ) {
 	return;
 }
 
-$course = learn_press_get_course();
-if ( ! $course ) {
-	return;
-}
-
-$user = learn_press_get_current_user();
+$course = LP_Global::course();
+$user = LP_Global::user();
 ?>
 
 <div class="course-item-meta">

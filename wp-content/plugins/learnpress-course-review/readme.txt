@@ -4,8 +4,8 @@ Donate link:
 Tags: lms, elearning, e-learning, learning management system, education, course, courses, quiz, quizzes, questions, training, guru, sell courses
 Requires at least: 3.8
 Requires PHP: 7.0
-Tested up to: 6.0
-Stable tag: 4.0.3
+Tested up to: 5.7
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,10 +56,6 @@ Check out <a href="http://docs.thimpress.com/learnpress" target="_blank">LearnPr
 1. LearnPress Course Review screenshot.
 
 == Changelog ==
-
-= 4.0.3 =
-~ Update review api.
-~ Fix minor bugs.
 
 = 4.0.2 =
 ~ Fix minor bug.

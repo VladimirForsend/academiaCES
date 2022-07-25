@@ -49,7 +49,7 @@ $readmore = 'https://thimpress.com/knowledge-base/outdated-template-fix/';
 				),
 			)
 		),
-		esc_url_raw( $readmore )
+		esc_url( $readmore )
 	);
 	?>
 	</p>

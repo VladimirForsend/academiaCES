@@ -15,10 +15,7 @@ if ( ! isset( $can_retake_times ) ) {
 	return;
 }
 
-$course = learn_press_get_course();
-if ( ! $course ) {
-	return;
-}
+$course = LP_Global::course();
 
 $message_data_confirm = sprintf(
 	'%s "%s"',

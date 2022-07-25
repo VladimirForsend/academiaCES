@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit();
 
-$user = learn_press_get_current_user();
+$user = LP_Global::user();
 ?>
 
 <form name="continue-course" class="continue-course form-button lp-form" method="post" action="" style="display:none">

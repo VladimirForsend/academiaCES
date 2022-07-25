@@ -17,10 +17,8 @@ defined( 'ABSPATH' ) || exit();
 /**
  * @var LP_Course $course
  */
-$course = learn_press_get_course();
-if ( ! $course ) {
-	return;
-}
+$course = LP_Global::course();
+
 ?>
 
 <div class="course-description" id="learn-press-course-description">

@@ -9,7 +9,7 @@
 
 defined( 'ABSPATH' ) or exit;
 
-$settings = LP_Settings::instance();
+$settings = LP()->settings();
 
 ?>
 <table>

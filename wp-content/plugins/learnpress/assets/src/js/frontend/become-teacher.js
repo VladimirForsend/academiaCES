@@ -1,11 +1,14 @@
 /**
- * Become a Teacher form handler js
+ * Become a Teacher form handler
  *
  * @author ThimPress
+ * @package LearnPress/JS
  * @version 3.0.0
  */
 
-jQuery( function( $ ) {
+const $ = jQuery;
+
+$( function() {
 	$( 'form[name="become-teacher-form"]' ).each( function() {
 		const $form = $( this ),
 			$submit = $form.find( 'button[type="submit"]' ),

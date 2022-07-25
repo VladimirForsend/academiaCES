@@ -62,14 +62,14 @@ class LP_Admin_Assets extends LP_Abstract_Assets {
 	protected function _get_scripts(): array {
 		$lp_admin_js = new LP_Asset_Key(
 			$this->url( self::$_folder_source . 'js/admin/admin' . self::$_min_assets . '.js' ),
-			array( 'learn-press-global', 'lp-utils', 'wp-color-picker', 'jspdf', 'vue-libs', 'wp-i18n' ),
+			array( 'learn-press-global', 'lp-utils', 'wp-color-picker', 'jspdf' ),
 			array(),
 			0,
 			1
 		);
 		$lp_admin_js->exclude_screen( array( 'plugin-install' ) );
 
-		$scripts = apply_filters(
+		return apply_filters(
 			'learn-press/admin-default-scripts',
 			array(
 				// need build if change source vue
@@ -277,8 +277,6 @@ class LP_Admin_Assets extends LP_Abstract_Assets {
 				),
 			)
 		);
-
-		return $scripts;
 	}
 
 	/**
@@ -332,7 +330,6 @@ class LP_Admin_Assets extends LP_Abstract_Assets {
 		if ( empty( $screen_id ) ) {
 			return;
 		}
-		wp_enqueue_media();
 
 		$this->handle_js( $screen_id );
 

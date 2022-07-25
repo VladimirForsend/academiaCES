@@ -6,16 +6,12 @@
  *
  * @author   ThimPress
  * @package  Learnpress/Templates
- * @version  4.0.1
+ * @version  4.0.0
  */
 
 defined( 'ABSPATH' ) || exit();
 
-// $cart = learn_press_get_checkout_cart();
-
-if ( ! isset( $cart ) ) {
-	return;
-}
+$cart = learn_press_get_checkout_cart();
 ?>
 
 <div id="checkout-order" class="lp-checkout-block right">

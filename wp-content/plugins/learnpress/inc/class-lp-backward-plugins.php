@@ -4,7 +4,6 @@
  * Class LP_Backward_Addons
  *
  * @since 3.0.0
- * @depecated 4.1.6.4
  */
 class LP_Backward_Addons {
 
@@ -108,7 +107,7 @@ class LP_Backward_Addons {
 
 			set_transient( 'lp-deactivated-addons', $invalid_plugins );
 
-			wp_redirect( esc_url_raw( remove_query_arg( 'activate' ) ) );
+			wp_redirect( remove_query_arg( 'activate' ) );
 			exit();
 		}
 	}

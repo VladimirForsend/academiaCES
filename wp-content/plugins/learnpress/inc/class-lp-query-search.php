@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Class LP_Query_Search
- *
- * @depecated 4.1.6.6
- */
 class LP_Query_Search {
 	/**
 	 * Search posts.

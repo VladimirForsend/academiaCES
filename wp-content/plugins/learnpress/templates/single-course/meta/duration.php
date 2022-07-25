@@ -9,7 +9,7 @@
 
 defined( 'ABSPATH' ) or die;
 
-$course = learn_press_get_course();
+$course = LP_Global::course();
 ?>
 
 <div class="meta-item meta-item-duration"><?php echo learn_press_get_post_translated_duration( get_the_ID(), esc_html__( 'Lifetime access', 'learnpress' ) ); ?></div>

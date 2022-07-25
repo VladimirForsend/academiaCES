@@ -30,7 +30,7 @@ class LP_Settings {
 	/**
 	 * @var bool
 	 */
-	protected static $_instance = null;
+	protected static $_instance = false;
 
 	/**
 	 * Constructor.
@@ -194,12 +194,12 @@ class LP_Settings {
 			$value = $this->get( $key );
 		}
 		update_option( $this->_prefix . $key, $value );
-		// $this->refresh();
+		$this->refresh();
 	}
 
 	public function refresh() {
 		if ( $this->_load_data ) {
-			// $this->_load_options( true );
+			$this->_load_options( true );
 		}
 
 		return $this;
@@ -240,7 +240,7 @@ class LP_Settings {
 	 * @return bool|LP_Settings
 	 */
 	public static function instance() {
-		if ( is_null( self::$_instance ) ) {
+		if ( empty( self::$_instance ) ) {
 			self::$_instance = new self();
 		}
 
@@ -345,7 +345,7 @@ class LP_Settings {
 			);
 
 			$endpoints = array();
-			$settings  = LP_Settings::instance()->get( 'checkout_endpoints' );
+			$settings  = LP()->settings->get( 'checkout_endpoints' );
 
 			if ( $settings ) {
 				foreach ( $settings as $k => $v ) {
@@ -379,7 +379,7 @@ class LP_Settings {
 			$defaults  = array();
 			$endpoints = array();
 
-			$settings = LP_Settings::instance()->get( 'profile_endpoints' );
+			$settings = LP()->settings->get( 'profile_endpoints' );
 			if ( $settings ) {
 				foreach ( $settings as $k => $v ) {
 					$k               = preg_replace( '!_!', '-', $k );
@@ -409,4 +409,15 @@ class LP_Settings {
 	}
 }
 
-LP_Settings::instance();
+if ( ! function_exists( 'lp_settings' ) ) {
+	/**
+	 * Instance lp setting
+	 *
+	 * @return LP_Settings|null
+	 */
+	function lp_settings() {
+		return LP_Settings::instance();
+	}
+
+	lp_settings();
+}

@@ -117,8 +117,7 @@ abstract class LP_Abstract_Settings {
 					}
 
 					// Get value from option
-					$std = get_option( $option_name );
-					if ( false === $std ) {
+					if ( false === ( $std = get_option( $option_name ) ) ) {
 						$std = array_key_exists( 'default', $field ) ? $field['default'] : '';
 					}
 
@@ -192,7 +191,7 @@ abstract class LP_Abstract_Settings {
 
 			// Single value
 		} else {
-			$option_value = LP_Settings::instance()->get( preg_replace( '!^learn_press_!', '', $option_name ), null );
+			$option_value = LP()->settings()->get( preg_replace( '!^learn_press_!', '', $option_name ), null );
 		}
 
 		if ( is_array( $option_value ) ) {

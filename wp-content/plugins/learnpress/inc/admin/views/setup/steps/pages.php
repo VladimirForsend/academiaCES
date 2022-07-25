@@ -9,7 +9,7 @@
 
 defined( 'ABSPATH' ) or exit;
 
-$settings = LP_Settings::instance();
+$settings = LP()->settings();
 ?>
 <h2><?php _e( 'Static Pages', 'learnpress' ); ?></h2>
 
@@ -19,7 +19,8 @@ $settings = LP_Settings::instance();
 <table class="form-field">
 	<tr>
 		<th>
-			<?php _e( 'Page: show list Courses', 'learnpress' ); ?>
+			<?php _e( 'Courses', 'learnpress' ); ?>
+			<?php learn_press_quick_tip( __( 'Page will display all courses inside.', 'learnpress' ) ); ?>
 		</th>
 		<td>
 			<?php learn_press_pages_dropdown( 'settings[pages][courses_page_id]', $settings->get( 'courses_page_id' ) ); ?>
@@ -27,7 +28,8 @@ $settings = LP_Settings::instance();
 	</tr>
 	<tr>
 		<th>
-			<?php _e( 'Page: Profile', 'learnpress' ); ?>
+			<?php _e( 'Profile', 'learnpress' ); ?>
+			<?php learn_press_quick_tip( __( 'Page will display content of user profile.', 'learnpress' ) ); ?>
 		</th>
 		<td>
 			<?php learn_press_pages_dropdown( 'settings[pages][profile_page_id]', $settings->get( 'profile_page_id' ) ); ?>
@@ -35,7 +37,8 @@ $settings = LP_Settings::instance();
 	</tr>
 	<tr>
 		<th>
-			<?php _e( 'Page: Checkout', 'learnpress' ); ?>
+			<?php _e( 'Checkout', 'learnpress' ); ?>
+			<?php learn_press_quick_tip( __( 'Page will display content of form for processing checkout.', 'learnpress' ) ); ?>
 		</th>
 		<td>
 			<?php learn_press_pages_dropdown( 'settings[pages][checkout_page_id]', $settings->get( 'checkout_page_id' ) ); ?>
@@ -43,7 +46,8 @@ $settings = LP_Settings::instance();
 	</tr>
 	<tr>
 		<th>
-			<?php _e( 'Page: Become a Teacher', 'learnpress' ); ?>
+			<?php _e( 'Become a Teacher', 'learnpress' ); ?>
+			<?php learn_press_quick_tip( __( 'Page will display the form for submitting request to become a teacher.', 'learnpress' ) ); ?>
 		</th>
 		<td>
 			<?php learn_press_pages_dropdown( 'settings[pages][become_a_teacher_page_id]', $settings->get( 'become_a_teacher_page_id' ) ); ?>
@@ -51,7 +55,7 @@ $settings = LP_Settings::instance();
 	</tr>
 	<tr>
 		<th>
-			<?php _e( 'Page: Terms and Conditions', 'learnpress' ); ?>
+			<?php _e( 'Terms and Conditions', 'learnpress' ); ?>
 		</th>
 		<td>
 			<?php learn_press_pages_dropdown( 'settings[pages][term_conditions_page_id]', $settings->get( 'term_conditions_page_id' ) ); ?>

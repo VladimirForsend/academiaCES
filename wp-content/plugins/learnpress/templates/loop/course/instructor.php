@@ -12,6 +12,7 @@
 defined( 'ABSPATH' ) || exit();
 
 $course = learn_press_get_course();
+
 if ( ! $course ) {
 	return;
 }

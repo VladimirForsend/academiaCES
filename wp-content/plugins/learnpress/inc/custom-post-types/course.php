@@ -30,8 +30,8 @@ if ( ! class_exists( 'LP_Course_Post_Type' ) ) {
 		 *
 		 * @param string
 		 */
-		public function __construct() {
-			parent::__construct();
+		public function __construct( $post_type ) {
+			parent::__construct( $post_type );
 
 			add_action( 'init', array( $this, 'register_taxonomy' ) );
 			add_filter( 'posts_where_paged', array( $this, '_posts_where_paged_course_items' ), 10 );
@@ -152,7 +152,8 @@ if ( ! class_exists( 'LP_Course_Post_Type' ) ) {
 		 * Register course taxonomy.
 		 */
 		public function register_taxonomy() {
-			$settings = LP_Settings::instance();
+
+			$settings = LP()->settings;
 
 			$category_base = $settings->get( 'course_category_base' );
 
@@ -329,13 +330,11 @@ if ( ! class_exists( 'LP_Course_Post_Type' ) ) {
 				return $where;
 			}
 
-			$filter_price = LP_Helper::sanitize_params_submitted( $_REQUEST['filter_price'] ?? 0 );
-
 			if ( array_key_exists( 'filter_price', $_REQUEST ) ) {
-				if ( $filter_price == 0 ) {
+				if ( $_REQUEST['filter_price'] == 0 ) {
 					$where .= ' AND ( pm_price.meta_value IS NULL || pm_price.meta_value = 0 )';
 				} else {
-					$where .= $wpdb->prepare( ' AND ( pm_price.meta_value = %s )', $filter_price );
+					$where .= $wpdb->prepare( ' AND ( pm_price.meta_value = %s )', $_REQUEST['filter_price'] );
 				}
 			}
 
@@ -684,7 +683,7 @@ if ( ! class_exists( 'LP_Course_Post_Type' ) ) {
 		 */
 		public static function instance() {
 			if ( ! self::$_instance ) {
-				self::$_instance = new self();
+				self::$_instance = new self( LP_COURSE_CPT );
 			}
 
 			return self::$_instance;

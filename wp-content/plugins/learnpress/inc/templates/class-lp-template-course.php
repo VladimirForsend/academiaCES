@@ -24,9 +24,9 @@ class LP_Template_Course extends LP_Abstract_Template {
 	}
 
 	public function get_course() {
-		// global $post;
+		global $post;
 
-		$this->course = learn_press_get_course();
+		$this->course = LP_Global::course();
 	}
 
 	public function course_sidebar_preview() {
@@ -38,8 +38,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	}
 
 	public function course_graduation() {
-		$user   = learn_press_get_current_user();
-		$course = learn_press_get_course();
+		$user   = LP_Global::user();
+		$course = LP_Global::course();
 
 		if ( ! $user || ! $course ) {
 			return;
@@ -60,8 +60,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	 * @throws Exception
 	 */
 	public function button_retry() {
-		$user   = learn_press_get_current_user();
-		$course = learn_press_get_course();
+		$user   = LP_Global::user();
+		$course = LP_Global::course();
 
 		if ( ! $user || ! $course ) {
 			return;
@@ -94,8 +94,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	 */
 	/*
 	public function loop_item_user_progress() {
-		$course = learn_press_get_course();
-		$user   = learn_press_get_current_user();
+		$course = LP_Global::course();
+		$user   = LP_Global::user();
 
 		if ( ! $user || ! $course ) {
 			return;
@@ -196,8 +196,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	 */
 	public function course_purchase_button() {
 		$can_show = true;
-		$course   = learn_press_get_course();
-		$user     = learn_press_get_current_user();
+		$course   = LP_Global::course();
+		$user     = LP_Global::user();
 
 		try {
 			if ( ! $user || ! $course ) {
@@ -246,8 +246,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	 */
 	public function course_enroll_button() {
 		$can_show = true;
-		$user     = learn_press_get_current_user();
-		$course   = learn_press_get_course();
+		$user     = LP_Global::user();
+		$course   = LP_Global::course();
 
 		try {
 			if ( ! $course || ! $user ) {
@@ -390,8 +390,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	 */
 	public function course_continue_button() {
 		$can_show = true;
-		$user     = learn_press_get_current_user();
-		$course   = learn_press_get_course();
+		$user     = LP_Global::user();
+		$course   = LP_Global::course();
 
 		try {
 			if ( ! $user || ! $course ) {
@@ -498,12 +498,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	}*/
 
 	public function course_finish_button() {
-		$user   = learn_press_get_current_user();
-		$course = learn_press_get_course();
-
-		if ( ! $course ) {
-			return;
-		}
+		$user   = LP_Global::user();
+		$course = LP_Global::course();
 
 		// Course has no items
 		if ( empty( $course->get_item_ids() ) ) {
@@ -533,8 +529,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	 * @modify 4.1.3
 	 */
 	public function course_external_button() {
-		$course = learn_press_get_course();
-		$user   = learn_press_get_current_user();
+		$course = LP_Global::course();
+		$user   = LP_Global::user();
 
 		if ( ! $course ) {
 			return;
@@ -557,8 +553,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	}
 
 	public function popup_header() {
-		$user   = learn_press_get_current_user();
-		$course = learn_press_get_course();
+		$user   = LP_Global::user();
+		$course = LP_Global::course();
 
 		if ( ! $user || ! $course ) {
 			return;
@@ -595,11 +591,7 @@ class LP_Template_Course extends LP_Abstract_Template {
 	}
 
 	public function popup_footer_nav() {
-		$course = learn_press_get_course();
-		if ( ! $course ) {
-			return;
-		}
-
+		$course    = LP_Global::course();
 		$next_item = $prev_item = false;
 
 		$next_id = $course->get_next_item();
@@ -750,11 +742,11 @@ class LP_Template_Course extends LP_Abstract_Template {
 	/*
 	public function remaining_time() {
 
-		if ( ! $course = learn_press_get_course() ) {
+		if ( ! $course = LP_Global::course() ) {
 			return;
 		}
 
-		if ( ! $user = learn_press_get_current_user() ) {
+		if ( ! $user = LP_Global::user() ) {
 			return;
 		}
 
@@ -814,8 +806,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 	 * Get template button complete lesson
 	 */
 	public function item_lesson_complete_button() {
-		$user   = learn_press_get_current_user();
-		$course = learn_press_get_course();
+		$user   = LP_Global::user();
+		$course = LP_Global::course();
 		$item   = LP_Global::course_item();
 
 		if ( ! $user || ! $course || ! $user->is_course_in_progress( $course->get_id() ) ) {
@@ -840,7 +832,7 @@ class LP_Template_Course extends LP_Abstract_Template {
 	public function lesson_comment_form() {
 		global $post;
 
-		if ( ! $course = learn_press_get_course() ) {
+		if ( ! $course = LP_Global::course() ) {
 			return;
 		}
 
@@ -969,7 +961,7 @@ class LP_Template_Course extends LP_Abstract_Template {
 			return;
 		}
 
-		$user = learn_press_get_current_user();
+		$user = LP_Global::user();
 
 		if ( ! $user ) {
 			return;
@@ -1025,7 +1017,7 @@ class LP_Template_Course extends LP_Abstract_Template {
 	public function course_item_comments() {
 		global $post;
 
-		if ( ! $course = learn_press_get_course() ) {
+		if ( ! $course = LP_Global::course() ) {
 			return;
 		}
 
@@ -1064,7 +1056,7 @@ class LP_Template_Course extends LP_Abstract_Template {
 	 * @throws Exception
 	 */
 	public function user_time() {
-		$user = learn_press_get_current_user();
+		$user = LP_Global::user();
 
 		if ( ! $user ) {
 			return;
@@ -1107,8 +1099,8 @@ class LP_Template_Course extends LP_Abstract_Template {
 			return;
 		}
 
-		$course = learn_press_get_course();
-		$user   = learn_press_get_current_user();
+		$course = LP_Global::course();
+		$user   = LP_Global::user();
 
 		if ( ! $course ) {
 			return;
@@ -1139,7 +1131,7 @@ class LP_Template_Course extends LP_Abstract_Template {
 
 	public function course_extra_boxes_position_control() {
 		$course = LP_Course::get_course( get_the_ID() );
-		$user   = learn_press_get_current_user();
+		$user   = LP_Global::user();
 
 		if ( ! $user || ! $course ) {
 			return;
