@@ -358,3 +358,8 @@ body .lp-quiz-buttons .form-button-finish-course {
 #popup-course #popup-content #learn-press-content-item .content-item-wrap {
     width: 90vw!important;
 }
+
+.zoom-iframe-container iframe {
+    width: 100%;
+    height: 65vh;
+}
