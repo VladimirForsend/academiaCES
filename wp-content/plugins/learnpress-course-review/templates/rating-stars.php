@@ -12,8 +12,8 @@
 // Prevent loading this file directly
 defined( 'ABSPATH' ) || exit;
 
-$percent = ( ! isset( $rated ) ) ? 0 : min( 100, ( round( $rated * 2 ) / 2 ) * 20 );
-$title   = sprintf( __( '%s out of 5 stars', 'learnpress-course-review' ), round( $rated, 2 ) );
+$percent = ( ! isset( $rated ) ) ? 0 : min( 100, ( round( ( int ) $rated * 2 ) / 2 ) * 20 );
+$title   = sprintf( __( '%s out of 5 stars', 'learnpress-course-review' ), round( ( int ) $rated, 2 ) );
 
 ?>
 <div class="review-stars-rated" title="<?php echo esc_attr( $title ); ?>">

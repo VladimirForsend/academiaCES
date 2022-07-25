@@ -49,7 +49,7 @@ function learn_press_get_course_review( $course_id, $paged = 1, $per_page = LP_A
 		);
 
 		$query = $wpdb->prepare( "
-	        SELECT SQL_CALC_FOUND_ROWS u.*, c.comment_ID as comment_id, cm1.meta_value as title, c.comment_content as content, cm2.meta_value as rate
+	        SELECT SQL_CALC_FOUND_ROWS u.user_email, u.display_name, c.comment_ID as comment_id, cm1.meta_value as title, c.comment_content as content, cm2.meta_value as rate
 	        FROM {$wpdb->posts} p
 	        INNER JOIN {$wpdb->comments} c ON p.ID = c.comment_post_ID
 	        INNER JOIN {$wpdb->users} u ON u.ID = c.user_id
@@ -153,7 +153,7 @@ function learn_press_get_user_review_title( $course_id, $user_id ) {
  *
  * @return mixed
  */
-function learn_press_get_user_rate( $course_id = null, $user_id = null ) {
+function learn_press_get_user_rate( $course_id = null, $user_id = null, $force = false ) {
 	if ( ! $user_id ) {
 		$user_id = get_current_user_id();
 	}
@@ -162,14 +162,14 @@ function learn_press_get_user_rate( $course_id = null, $user_id = null ) {
 	}
 
 	// Get in cache if it is already get
-	if ( ! ( $comment = wp_cache_get( 'user-' . $user_id . '/' . $course_id, 'lp-user-rate' ) ) ) {
+	if ( ! ( $comment = wp_cache_get( 'user-' . $user_id . '/' . $course_id, 'lp-user-rate' ) ) || $force ) {
 		global $wpdb;
 		$query = $wpdb->prepare( "
 	        SELECT *
 	        FROM {$wpdb->posts} p
 	        INNER JOIN {$wpdb->comments} c ON c.comment_post_ID = p.ID
-	        WHERE c.comment_post_ID = %d 
-	        AND c.user_id = %d 
+	        WHERE c.comment_post_ID = %d
+	        AND c.user_id = %d
 	        AND c.comment_type = %s
 	    ", $course_id, $user_id, 'review' );
 
@@ -201,13 +201,15 @@ function learn_press_add_course_review( $args = array() ) {
 			'content'   => '',
 			'rate'      => '',
 			'user_id'   => 0,
-			'course_id' => 0
+			'course_id' => 0,
+			'force' => 0,
 		)
 	);
 	$user_id     = $args['user_id'];
 	$course_id   = $args['course_id'];
-	$user_review = learn_press_get_user_rate( $course_id, $user_id );
+	$user_review = learn_press_get_user_rate( $course_id, $user_id, $args['force'] );
 	$comment_id  = 0;
+
 	if ( ! $user_review ) {
 		$user       = get_user_by( 'id', $user_id );
 		$comment_id = wp_new_comment(
@@ -263,12 +265,13 @@ function learn_press_init_courses_review( $posts ) {
  * @return array
  */
 function leanr_press_get_ratings_result( $course_id = 0, $get_items = false ) {
-	//return learn_press_get_ratings_result_bak($course_id);
-	if ( false === ( $result = wp_cache_get( 'course-' . $course_id, 'lp-course-ratings' ) ) ) {
+	$result = wp_cache_get( 'course-' . $course_id, 'lp-course-ratings' );
+
+	if ( $result === false ) {
 		global $wpdb;
 
 		$query = $wpdb->prepare( "
-				SELECT 
+				SELECT
 					cm.meta_value `rate`, COUNT(1) `count`
 				FROM
 					{$wpdb->comments} c
@@ -278,10 +281,10 @@ function leanr_press_get_ratings_result( $course_id = 0, $get_items = false ) {
 					c.comment_approved = 1
 						AND c.comment_type = %s
 						AND c.user_id > 0
-						AND c.comment_post_ID = %d 
+						AND c.comment_post_ID = %d
 				GROUP BY `cm`.`meta_value`
 			", '_lpr_rating', 'review', $course_id );
-		$rows  = $wpdb->get_results( $query/*, OBJECT_K */ );
+		$rows  = $wpdb->get_results( $query );
 
 		$count = 0;
 		$rate  = 0;
@@ -297,7 +300,6 @@ function leanr_press_get_ratings_result( $course_id = 0, $get_items = false ) {
 		}
 
 		if ( $rows ) {
-
 			$count       = wp_list_pluck( $rows, 'count' );
 			$count       = array_sum( $count );
 			$round       = array();
@@ -331,7 +333,6 @@ function leanr_press_get_ratings_result( $course_id = 0, $get_items = false ) {
 				}
 			}
 
-
 			$avg = $rate / $count;
 		}
 
@@ -342,87 +343,7 @@ function leanr_press_get_ratings_result( $course_id = 0, $get_items = false ) {
 			'items'     => $items
 		);
 
-		wp_cache_set( 'course-' . $course_id, $result, 'lp-course-ratings' );
-	}
-
-	return $result;
-}
-
-function learn_press_get_ratings_result_bak( $course_id = 0, $get_items = false ) {
-
-	if ( false === ( $result = wp_cache_get( 'course-' . $course_id, 'lp-course-ratings' ) ) ) {
-		LP_Debug::timeStart( 'xxxxx' );
-		global $wpdb;
-		$query = $wpdb->prepare( "
-			SELECT 
-				COUNT(*) `count` ,AVG(cm.meta_value) `avg`
-			FROM
-				{$wpdb->comments} c
-					INNER JOIN
-				{$wpdb->commentmeta} cm ON c.comment_ID = cm.comment_id AND meta_key = %s
-			WHERE
-				c.comment_approved = 1
-					AND c.comment_type = %s
-					AND c.user_id > 0
-					AND c.comment_post_ID = %d
-		", '_lpr_rating', 'review', $course_id );
-		$row   = $wpdb->get_row( $query );
-
-		$count = 0;
-		$avg   = 0;
-
-		if ( $row ) {
-			$count = $row->count;
-			$avg   = $row->avg;
-		}
-
-		$rows = array();
-		if ( $count != 0 ):
-
-			$query = $wpdb->prepare( "
-				SELECT 
-					cm.meta_value `rate`, COUNT(*) `count`
-				FROM
-					{$wpdb->comments} c
-						INNER JOIN
-					{$wpdb->commentmeta} cm ON c.comment_ID = cm.comment_id AND meta_key = %s
-				WHERE
-					c.comment_approved = 1
-						AND c.comment_type = %s
-						AND c.user_id > 0
-						AND c.comment_post_ID = %d 
-				GROUP BY `cm`.`meta_value`
-				ORDER BY `cm`.`meta_value` DESC
-			", '_lpr_rating', 'review', $course_id );
-			$rows  = $wpdb->get_results( $query, OBJECT_K );
-
-		endif;
-
-		$items = array();
-		for ( $i = 5; $i > 0; $i -- ) {
-			if ( isset( $rows[ $i ] ) ) {
-				$items[] = array(
-					'rated'   => $rows[ $i ]->rate,
-					'total'   => $rows[ $i ]->count,
-					'percent' => $rows[ $i ]->count / $count * 100
-				);
-			} else {
-				$items[] = array(
-					'rated'   => $i,
-					'total'   => 0,
-					'percent' => 0
-				);
-			}
-		}
-		$result = array(
-			'course_id' => $course_id,
-			'total'     => $count,
-			'rated'     => $avg,
-			'items'     => $items
-		);
-
-
-		wp_cache_set( 'course-' . $course_id, $result, 'lp-course-ratings' );
+		wp_cache_set( 'course-' . $course_id, $result, 'lp-course-ratings', 6 * HOUR_IN_SECONDS );
 	}
 
 	return $result;

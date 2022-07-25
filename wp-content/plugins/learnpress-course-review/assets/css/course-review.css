@@ -1,9 +1,15 @@
 .course-rate {
   display: flex;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
   .course-rate .course-rate__details {
     margin-left: 50px;
     flex: 1; }
+	.course-rate .course-rate__message {
+		width: 100%;
+		margin-bottom:15px;
+	}
   .course-rate .course-rate__summary-value {
     font-size: 90px;
     text-align: center;

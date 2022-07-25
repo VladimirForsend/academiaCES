@@ -60,6 +60,10 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 		protected function _includes() {
 			require_once LP_ADDON_COURSE_REVIEW_PATH . '/inc/functions.php';
 			require_once LP_ADDON_COURSE_REVIEW_PATH . '/inc/widgets.php';
+
+			// Rest API
+			require_once LP_ADDON_COURSE_REVIEW_PATH . '/inc/rest-api/class-lp-rest-review-v1-controller.php';
+			require_once LP_ADDON_COURSE_REVIEW_PATH . '/inc/rest-api/class-rest-api.php';
 		}
 
 		/**
@@ -73,10 +77,13 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_assets' ) );
 			LP_Request_Handler::register_ajax( 'add_review', array( $this, 'add_review' ) );
-			LP_Request_Handler::register_ajax( 'learnpress_load_course_review', array(
-				$this,
-				'learnpress_load_course_review'
-			) );
+			LP_Request_Handler::register_ajax(
+				'learnpress_load_course_review',
+				array(
+					$this,
+					'learnpress_load_course_review',
+				)
+			);
 			add_shortcode( 'learnpress', array( $this, 'shortcode_review' ) );
 
 			$this->init_comment_table();
@@ -138,13 +145,15 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 				wp_enqueue_script( 'course-review', LP_ADDON_COURSE_REVIEW_URL . '/assets/js/course-review.js', array( 'jquery' ), '', true );
 				wp_enqueue_style( 'course-review', LP_ADDON_COURSE_REVIEW_URL . '/assets/css/course-review.css' );
 				wp_enqueue_style( 'dashicons' );
-				wp_localize_script( 'course-review', 'learn_press_course_review',
+				wp_localize_script(
+					'course-review',
+					'learn_press_course_review',
 					array(
 						'localize' => array(
 							'empty_title'   => __( 'Please enter the review title', 'learnpress-course-review' ),
 							'empty_content' => __( 'Please enter the review content', 'learnpress-course-review' ),
-							'empty_rating'  => __( 'Please select your rating', 'learnpress-course-review' )
-						)
+							'empty_rating'  => __( 'Please select your rating', 'learnpress-course-review' ),
+						),
 					)
 				);
 			}
@@ -183,9 +192,13 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 					'course_id' => $id,
 					'rate'      => $rate,
 					'title'     => $title,
-					'content'   => $content
+					'content'   => $content,
 				)
 			);
+
+			// Clear cache
+			wp_cache_delete( 'course-' . $id, 'lp-course-ratings' );
+
 			$response['comment'] = $return;
 			learn_press_send_json( $response );
 		}
@@ -235,14 +248,18 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 				   for="filter-by-comment-post-type"><?php _e( 'Filter by post type' ); ?></label>
 			<select id="filter-by-comment-post-type" name="post_type">
 				<?php
-				$comment_post_types = apply_filters( 'learn_press_admin_comment_post_type_types_dropdown', array(
-					''          => __( 'All post type', 'learnpress-course-review' ),
-					'lp_course' => __( 'Course comments', 'learnpress-course-review' ),
-				) );
+				$comment_post_types = apply_filters(
+					'learn_press_admin_comment_post_type_types_dropdown',
+					array(
+						''          => __( 'All post type', 'learnpress-course-review' ),
+						'lp_course' => __( 'Course comments', 'learnpress-course-review' ),
+					)
+				);
 
 				foreach ( $comment_post_types as $type => $label ) {
 					echo "\t" . '<option value="' . esc_attr( $type ) . '"' . selected( $comment_post_types, $type, false ) . ">$label</option>\n";
-				} ?>
+				}
+				?>
 
 			</select>
 			<?php
@@ -250,12 +267,16 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 
 
 		public function shortcode_review( $atts ) {
-			$atts = shortcode_atts( array(
-				'course_id'      => 0,
-				'show_rate'      => 'yes',
-				'show_review'    => 'yes',
-				'display_amount' => '5'
-			), $atts, 'shortcode_review' );
+			$atts = shortcode_atts(
+				array(
+					'course_id'      => 0,
+					'show_rate'      => 'yes',
+					'show_review'    => 'yes',
+					'display_amount' => '5',
+				),
+				$atts,
+				'shortcode_review'
+			);
 
 			$course_id = $atts['course_id'];
 			if ( ! $course_id ) {
@@ -269,17 +290,20 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 				$rate_args   = array(
 					'course_id'   => $course_id,
 					'course_rate' => $course_rate,
-					'total'       => $total
+					'total'       => $total,
 				);
 				learn_press_course_review_template( 'shortcode-course-rate.php', $rate_args );
 			}
 
 			if ( $atts['show_review'] ) {
 				$course_review = learn_press_get_course_review( $course_id, 1, $atts['display_amount'] );
-				learn_press_course_review_template( 'shortcode-course-review.php', array(
-					'course_id'     => $course_id,
-					'course_review' => $course_review
-				) );
+				learn_press_course_review_template(
+					'shortcode-course-review.php',
+					array(
+						'course_id'     => $course_id,
+						'course_review' => $course_review,
+					)
+				);
 			}
 
 			$content = ob_get_contents();
@@ -297,9 +321,8 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 			$tabs['reviews'] = array(
 				'title'    => __( 'Reviews', 'learnpress-course-review' ),
 				'priority' => 60,
-				'callback' => array( $this, 'add_course_tab_reviews_callback' )
+				'callback' => array( $this, 'add_course_tab_reviews_callback' ),
 			);
-
 
 			return $tabs;
 		}

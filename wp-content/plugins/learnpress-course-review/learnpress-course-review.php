@@ -4,7 +4,7 @@
  * Plugin URI: http://thimpress.com/learnpress
  * Description: Adding review for course.
  * Author: ThimPress
- * Version: 4.0.2
+ * Version: 4.0.3
  * Author URI: http://thimpress.com
  * Tags: learnpress
  * Requires at least: 3.8
@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'LP_ADDON_COURSE_REVIEW_FILE', __FILE__ );
+const LP_ADDON_COURSE_REVIEW_FILE = __FILE__;
 
 /**
  * Class LP_Addon_Course_Review_Preload
