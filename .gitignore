@@ -1,4 +1,5 @@
 wp-content/uploads
+wp-content/plugins
 wp-config.php
 wp-config.php
 .DS_Store
