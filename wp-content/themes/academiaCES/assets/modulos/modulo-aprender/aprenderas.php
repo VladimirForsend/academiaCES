@@ -29,7 +29,7 @@
                     <div class="card">
                         <div class="card-header" id="headingOne<?php the_ID(); ?>">
                             <h5 class="mb-0">
-                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne<?php the_ID(); ?>" aria-expanded="true" aria-controls="collapseOne<?php the_ID(); ?>">
+                                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne<?php the_ID(); ?>" aria-expanded="true" aria-controls="collapseOne<?php the_ID(); ?>">
                                     <h5><?php echo get_the_title(); ?></h5>
                                 </button>
                                 </h2>
